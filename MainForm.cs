@@ -40,9 +40,9 @@ namespace ACFAModelReplacer
             ConversionResultStatusLabelMFSS.Text = "";
             string flver2ModelPath = Util.GetFilePath("FLVER2 Model to convert");
             string flver0DonorModelPath = Util.GetFilePath("FLVER0 Model to replace");
-            if (flver2ModelPath == null || flver0DonorModelPath == null) { return; }
+            if (flver2ModelPath == null || flver0DonorModelPath == null) { ConversionResultStatusLabelMFSS.Text = "FLVER2 model path or FLVER0 Donor path was null"; return; }
+            ConversionResultStatusLabelMFSS.Text = "Converting....";
             FLVER0 replacedFlver0Model = Converter.ReplaceFlver0Flver2(flver2ModelPath, flver0DonorModelPath);
-
             if (!File.Exists($"{flver0DonorModelPath}.bak")) File.Copy(flver0DonorModelPath, $"{flver0DonorModelPath}.bak");
             replacedFlver0Model.Write(flver0DonorModelPath);
             ConversionResultStatusLabelMFSS.Text = "Conversion Successful";
