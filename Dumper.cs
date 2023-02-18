@@ -98,7 +98,7 @@ namespace ACFAModelReplacer
                     catch (InvalidDataException ide) // TODO: Figure out how to read 0x11 header for 104 flv files
                     {
                         Logger.LogExceptionWithDate(ide, $"{bFile.Name} failed to read properly and passed FLVER0 check");
-                        //throw;
+                        throw;
                     }
                 }
                 else if (MTD.Is(bFile.Bytes))
