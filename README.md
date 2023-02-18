@@ -6,6 +6,7 @@ I am working on dumping mtds and buffer layouts so I can get full proper convers
 After that I will work on FBX to ACFA model conversion
 
 # Building
+MAY NOT BE CORRECT RIGHT NOW  
 If you want to build the project you should clone it with this command in git bash:  
 ```
 git clone --recurse-submodules https://github.com/WarpZephyr/ACFAModelEditor.git  
