@@ -1,0 +1,531 @@
+{
+  "Phong.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 3,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "PhongBump.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 3,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 20,
+        "Semantic": 6,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "ACParts.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 3,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 20,
+        "Semantic": 6,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 22,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 8
+      }
+    ]
+  ],
+  "Simple.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 3,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "NoLightNoFog.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 2,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "ACParts_g.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 3,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 20,
+        "Semantic": 6,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 22,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 8
+      }
+    ]
+  ],
+  "PhongBumpEnv.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 3,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 20,
+        "Semantic": 6,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "Phong_Skin.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 2,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 26,
+        "Semantic": 1,
+        "Index": 0,
+        "Size": 8
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 3,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "NoLightBlend.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 2,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "NoLightAlpha.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 2,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "NoLightNoScatterBlend.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 2,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "Water.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 3,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 20,
+        "Semantic": 6,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "NoLightNoFogAlpha.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 2,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ],
+  "MultiGround.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 3,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 20,
+        "Semantic": 6,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 22,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 8
+      }
+    ]
+  ],
+  "NoLight.spx": [
+    [
+      {
+        "Unk00": 0,
+        "Type": 2,
+        "Semantic": 0,
+        "Index": 0,
+        "Size": 12
+      },
+      {
+        "Unk00": 0,
+        "Type": 18,
+        "Semantic": 2,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 16,
+        "Semantic": 10,
+        "Index": 0,
+        "Size": 4
+      },
+      {
+        "Unk00": 0,
+        "Type": 21,
+        "Semantic": 5,
+        "Index": 0,
+        "Size": 4
+      }
+    ]
+  ]
+}
