@@ -12,7 +12,7 @@ namespace ACFAModelReplacer
             return ds1Model;
         }*/
 
-        public static FLVER0 ConvertFlver2Flver0(FLVER2 flver2Model)
+        /*public static FLVER0 ConvertFlver2Flver0(FLVER2 flver2Model)
         {
             FLVER0 flver0Model = new()
             {
@@ -30,13 +30,29 @@ namespace ACFAModelReplacer
             flver2Model.Meshes.ForEach(x => flver0Model.Meshes.Add(FLVER2Convert.GetMesh(x, flver2Model)));
             flver2Model.Materials.ForEach(x => flver0Model.Materials.Add(FLVER2Convert.GetMaterial(x)));
             return flver0Model;
-        }
+        }*/
 
         // Temporary until full solution is found
         public static FLVER0 ReplaceFlver0Flver2(string flver2ModelPath, string flver0DonorModelPath)
         {
             FLVER2 flver2Model = FLVER2.Read(flver2ModelPath);
-            FLVER0 flver0Model = ConvertFlver2Flver0(flver2Model);
+
+            FLVER0 flver0Model = new()
+            {
+                Bones = flver2Model.Bones,
+                Dummies = flver2Model.Dummies,
+                Header = new FLVER0.FLVERHeader()
+                {
+                    BoundingBoxMax = flver2Model.Header.BoundingBoxMax,
+                    BoundingBoxMin = flver2Model.Header.BoundingBoxMin,
+                    Unicode = flver2Model.Header.Unicode,
+                    VertexIndexSize = 16
+                }
+            };
+
+            flver2Model.Meshes.ForEach(x => flver0Model.Meshes.Add(FLVER2Convert.GetMesh(x, flver2Model)));
+            flver2Model.Materials.ForEach(x => flver0Model.Materials.Add(FLVER2Convert.GetMaterial(x)));
+
             FLVER0 flver0DonorModel = FLVER0.Read(flver0DonorModelPath);
 
             flver0Model.Header.Version = flver0DonorModel.Header.Version;

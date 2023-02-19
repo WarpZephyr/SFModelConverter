@@ -86,16 +86,16 @@ namespace ACFAModelReplacer
         // Recursively dump mtds from material bnd
         private void RecurseMTDDumpEFMS_Click(object sender, EventArgs e)
         {
-            ConversionResultStatusLabelMFSS.Text = "";
-            string gameDir = Util.GetFolderPath("Armored Core: For Answer USRDIR folder");
-            string mtdBND = $"{gameDir}/bind/material.bnd";
-            if (gameDir == null || mtdBND == null) { ConversionResultStatusLabelMFSS.Text = "Selected path or material path was null"; return; }
-            ConversionResultStatusLabelMFSS.Text = "Wait for recursive MTD dump....";
-            Dictionary<string, MTD> newMtds = Dumper.RecursiveDump<Dictionary<string, MTD>>(mtdBND, "mtd");
-            if (newMtds == null) { ConversionResultStatusLabelMFSS.Text = "New mtds were returned empty"; return; }
-            var json = JsonConvert.SerializeObject(newMtds, Formatting.Indented);
-            File.WriteAllText($"{Util.resFolderPath}/FLVER0/newmtds.json", json);
-            ConversionResultStatusLabelMFSS.Text = $"Finished dumping mtds to {Util.resFolderPath}/FLVER0/newmtds.json successfully";
+            ConversionResultStatusLabelMFSS.Text = "Not yet implemented - use replace";
+            //string gameDir = Util.GetFolderPath("Armored Core: For Answer USRDIR folder");
+            //string mtdBND = $"{gameDir}/bind/material.bnd";
+            //if (gameDir == null || mtdBND == null) { ConversionResultStatusLabelMFSS.Text = "Selected path or material path was null"; return; }
+            //ConversionResultStatusLabelMFSS.Text = "Wait for recursive MTD dump....";
+            //Dictionary<string, MTD> newMtds = Dumper.RecursiveDump<Dictionary<string, MTD>>(mtdBND, "mtd");
+            //if (newMtds == null) { ConversionResultStatusLabelMFSS.Text = "New mtds were returned empty"; return; }
+            //var json = JsonConvert.SerializeObject(newMtds, Formatting.Indented);
+            //File.WriteAllText($"{Util.resFolderPath}/FLVER0/newmtds.json", json);
+            //ConversionResultStatusLabelMFSS.Text = $"Finished dumping mtds to {Util.resFolderPath}/FLVER0/newmtds.json successfully";
         }
 
         // Recursively dump buffer layouts from all flvs in model directory

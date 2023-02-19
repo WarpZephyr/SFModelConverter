@@ -31,6 +31,8 @@
             this.MainFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.FileMS = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenFMS = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReplaceFLVER0FMS = new System.Windows.Forms.ToolStripMenuItem();
+            this.Extract000FMS = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ExportFMS = new System.Windows.Forms.ToolStripMenuItem();
             this.MTDDumpEFMS = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +43,6 @@
             this.AboutHMS = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFormStatusStrip = new System.Windows.Forms.StatusStrip();
             this.ConversionResultStatusLabelMFSS = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ReplaceFLVER0FMS = new System.Windows.Forms.ToolStripMenuItem();
-            this.Extract000FMS = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFormMenuStrip.SuspendLayout();
             this.MainFormStatusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,30 @@
             this.OpenFMS.Text = "Open";
             this.OpenFMS.ToolTipText = "Converts FLVER2 Models to FLVER0 Models";
             this.OpenFMS.Click += new System.EventHandler(this.OpenFMS_click);
+            // 
+            // ReplaceFLVER0FMS
+            // 
+            this.ReplaceFLVER0FMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.ReplaceFLVER0FMS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ReplaceFLVER0FMS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ReplaceFLVER0FMS.ForeColor = System.Drawing.SystemColors.Control;
+            this.ReplaceFLVER0FMS.Name = "ReplaceFLVER0FMS";
+            this.ReplaceFLVER0FMS.Size = new System.Drawing.Size(180, 22);
+            this.ReplaceFLVER0FMS.Text = "Replace FLVER0";
+            this.ReplaceFLVER0FMS.ToolTipText = "Replaces FLVER0 model with FLVER2 model";
+            this.ReplaceFLVER0FMS.Click += new System.EventHandler(this.ReplaceFLVER0FMS_Click);
+            // 
+            // Extract000FMS
+            // 
+            this.Extract000FMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.Extract000FMS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Extract000FMS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Extract000FMS.ForeColor = System.Drawing.SystemColors.Control;
+            this.Extract000FMS.Name = "Extract000FMS";
+            this.Extract000FMS.Size = new System.Drawing.Size(180, 22);
+            this.Extract000FMS.Text = "Extract 000";
+            this.Extract000FMS.ToolTipText = "Decompresses 000 file to get AC4 model";
+            this.Extract000FMS.Click += new System.EventHandler(this.Extract000FMS_Click);
             // 
             // toolStripSeparator1
             // 
@@ -194,30 +218,6 @@
             // 
             this.ConversionResultStatusLabelMFSS.Name = "ConversionResultStatusLabelMFSS";
             this.ConversionResultStatusLabelMFSS.Size = new System.Drawing.Size(0, 17);
-            // 
-            // ReplaceFLVER0FMS
-            // 
-            this.ReplaceFLVER0FMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.ReplaceFLVER0FMS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ReplaceFLVER0FMS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ReplaceFLVER0FMS.ForeColor = System.Drawing.SystemColors.Control;
-            this.ReplaceFLVER0FMS.Name = "ReplaceFLVER0FMS";
-            this.ReplaceFLVER0FMS.Size = new System.Drawing.Size(180, 22);
-            this.ReplaceFLVER0FMS.Text = "Replace FLVER0";
-            this.ReplaceFLVER0FMS.ToolTipText = "Replaces FLVER0 model with FLVER2 model";
-            this.ReplaceFLVER0FMS.Click += new System.EventHandler(this.ReplaceFLVER0FMS_Click);
-            // 
-            // Extract000FMS
-            // 
-            this.Extract000FMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.Extract000FMS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Extract000FMS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.Extract000FMS.ForeColor = System.Drawing.SystemColors.Control;
-            this.Extract000FMS.Name = "Extract000FMS";
-            this.Extract000FMS.Size = new System.Drawing.Size(180, 22);
-            this.Extract000FMS.Text = "Extract 000";
-            this.Extract000FMS.ToolTipText = "Decompresses 000 file to get AC4 model";
-            this.Extract000FMS.Click += new System.EventHandler(this.Extract000FMS_Click);
             // 
             // MainForm
             // 
