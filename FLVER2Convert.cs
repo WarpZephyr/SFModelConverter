@@ -8,15 +8,13 @@ namespace ACFAModelReplacer
 {
     internal static class FLVER2Convert
     {
-        static Dictionary<string, MTD> flver0MtdDict = JsonConvert.DeserializeObject<Dictionary<string, MTD>>(File.ReadAllText($@"{Util.resFolderPath}\FLVER0\mtds.json"));
-        static Dictionary<string, List<FLVER0.BufferLayout>> flver0LayoutList = JsonConvert.DeserializeObject<Dictionary<string, List<FLVER0.BufferLayout>>>(File.ReadAllText($@"{Util.resFolderPath}\FLVER0\layouts.json"));
+        static Dictionary<string, MTD> mtds = JsonConvert.DeserializeObject<Dictionary<string, MTD>>(File.ReadAllText($@"{Util.resFolderPath}\FLVER0\mtds.json"));
+        static Dictionary<string, List<FLVER0.BufferLayout>> layouts = JsonConvert.DeserializeObject<Dictionary<string, List<FLVER0.BufferLayout>>>(File.ReadAllText($@"{Util.resFolderPath}\FLVER0\layouts.json"));
 
         public static FLVER0.Mesh GetMesh(FLVER2.Mesh flver2Mesh, FLVER2 flver2Flv)
         {
-            //var layout = flv.BufferLayouts[mesh1.VertexBuffers[0].LayoutIndex];
             var mat = flver2Flv.Materials[flver2Mesh.MaterialIndex];
             mat.MTD = Path.GetFileName(mat.MTD).ToLower();
-            //UpdateMtdName(mat.MTD, layout);
 
             FLVER0.Mesh meshd = new()
             {
@@ -39,6 +37,7 @@ namespace ACFAModelReplacer
                 meshd.BoneIndices[i] = index;
             }
 
+            Console.WriteLine("Mesh conversion succeeded");
             return meshd;
         }
 
@@ -58,15 +57,15 @@ namespace ACFAModelReplacer
         private static FLVER0.BufferLayout GetLayout(string mtd, out MTD mtdFile)
         {
             string mtdName = Path.GetFileNameWithoutExtension(mtd);
-            if (!flver0MtdDict.ContainsKey(mtdName))
+            if (!mtds.ContainsKey(mtdName))
             {
                 if (mtdName.EndsWith("_skin"))
-                    mtdName = "c[d]_skin";
+                    mtdName = "default_skin";
                 else
-                    mtdName = "c[d]";
+                    mtdName = "default";
             }
-            mtdFile = flver0MtdDict[mtdName];
-            var layout = flver0LayoutList[Path.GetFileName(mtdFile.ShaderPath)][0];
+            mtdFile = mtds[mtdName];
+            var layout = layouts[Path.GetFileName(mtdFile.ShaderPath)][0];
             return layout;
         }
 

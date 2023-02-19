@@ -39,16 +39,16 @@ namespace ACFAModelReplacer
             FLVER0 flver0Model = ConvertFlver2Flver0(flver2Model);
             FLVER0 flver0DonorModel = FLVER0.Read(flver0DonorModelPath);
 
-            flver0Model.Header.Version = flver0DonorModel.Header.Version;
-            flver0Model.Materials = flver0DonorModel.Materials;
-            flver0Model.Dummies = flver0DonorModel.Dummies;
-            flver0Model.Bones = flver0DonorModel.Bones;
+            flver0DonorModel.Header.Version = flver0Model.Header.Version;
+            flver0DonorModel.Materials = flver0Model.Materials;
+            flver0DonorModel.Dummies = flver0Model.Dummies;
+            flver0DonorModel.Bones = flver0Model.Bones;
 
-            foreach (var mesh in flver0Model.Meshes)
+            foreach (var mesh in flver0DonorModel.Meshes)
             {
                 mesh.MaterialIndex = 0;
                 mesh.Dynamic = 0;
-                mesh.DefaultBoneIndex = flver0DonorModel.Meshes[0].DefaultBoneIndex;
+                mesh.DefaultBoneIndex = flver0Model.Meshes[0].DefaultBoneIndex;
                 foreach (var vert in mesh.Vertices)
                 {
                     vert.UVs.Add(vert.UVs[0]);
@@ -61,7 +61,7 @@ namespace ACFAModelReplacer
                 }     
             }
 
-            return flver0Model;
+            return flver0DonorModel;
         }
     }
 }

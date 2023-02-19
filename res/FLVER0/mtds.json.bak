@@ -1,0 +1,4569 @@
+{
+  "acparts": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\ACParts.spx",
+    "Description": "全ACパーツ共有",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Decal",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 8,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "acparts_alpha": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\ACParts.spx",
+    "Description": "ミッションACパーツα\r\nアルファ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Decal",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 8,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "acparts_g": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\ACParts_g.spx",
+    "Description": "ガレージACパーツ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Decal",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 8,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Color",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 9,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "acparts_g_alpha": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\ACParts_g.spx",
+    "Description": "ガレージACパーツα\r\nアルファ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Decal",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 8,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Color",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 9,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "bumpmap": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\PhongBump.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ　バンプ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "bumpmapalpha": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\PhongBump.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ　バンプ 　アルファ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "default": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "default_multi": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\MultiGround.spx",
+    "Description": "標準\r\nデフューズ×2　スペキュラ×2　バンプ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      },
+      {
+        "Name": "g_DiffuseMapColor2",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower2",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor2",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower2",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower2",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Diffuse_2",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 3,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular_2",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 4,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "default_skin": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong_Skin.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ\r\nスキン",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "defaultalpha": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ　α抜き",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "desert": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "e4220": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.5
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 20.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "emblem": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Simple.spx",
+    "Description": "ミッションACパーツエンブレム",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "emblem_g": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Simple.spx",
+    "Description": "ガレージACパーツエンブレム",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "grassfield": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\GrassField.spx",
+    "Description": "furデータ用　シェーダ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 5
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_WaveWidth",
+        "Type": 3,
+        "Value": 1.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_VtxBumpmap",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 16,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m010_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm010_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.02,
+          0.02
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.02,
+          -0.02
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.15
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 2.0
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.2509804,
+          0.2509804,
+          0.2509804,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 4.0
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.22
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.44
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          0.90196085,
+          0.90196085
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.005,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.003,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.002,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m020_grassfield": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\GrassField.spx",
+    "Description": "m020用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          0.9176471,
+          1.0,
+          0.8000001
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 0.7
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_WaveWidth",
+        "Type": 3,
+        "Value": 0.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_VtxBumpmap",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 16,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m040_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm040_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.01,
+          0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.13
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 2.5
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.200000018,
+          0.149019614,
+          0.200000018,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 1.2
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.88
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          0.8000001,
+          0.7019608
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.004,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.002,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.001,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m050_default_snow": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m050_defaultalpha": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong.spx",
+    "Description": "標準\r\nm050 木アルファ用\r\nデフューズ　スペキュラ　α抜き",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 5
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m050_multiground_snow": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\MultiGround.spx",
+    "Description": "標準\r\nデフューズ×2　スペキュラ×2　バンプ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      },
+      {
+        "Name": "g_DiffuseMapColor2",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower2",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor2",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower2",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower2",
+        "Type": 3,
+        "Value": 70.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Diffuse_2",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 3,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular_2",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 4,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m050_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm040_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.01,
+          0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.13
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 2.5
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.200000018,
+          0.149019614,
+          0.200000018,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 1.2
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.88
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          0.8000001,
+          0.7019608
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.004,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.002,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.001,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m070_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm250_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.02,
+          0.02
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.02,
+          -0.02
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.15
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 2.0
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.188235313,
+          0.149019614,
+          0.0980392247,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 4.0
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.22
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.88
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          0.90196085,
+          0.90196085
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.005,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.003,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.002,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m080_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm080_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.01,
+          0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.13
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 5.0
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.3803922,
+          0.160784319,
+          0.149019614,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 11.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 27.0
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.4
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.7
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          0.698039234,
+          0.882353,
+          0.5882353
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.005,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.003,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.003,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m090_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm090　水面用 ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          0.90196085,
+          1.0,
+          0.90196085
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 9.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.01,
+          0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.0,
+          0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.04
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.005
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 4.0
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.0980392247,
+          0.0980392247,
+          0.200000018,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 2.0
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.2
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          0.698039234,
+          0.698039234,
+          0.698039234
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 5,
+        "Value": [
+          0.004,
+          0.1,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 5,
+        "Value": [
+          0.004,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 5,
+        "Value": [
+          0.003,
+          0.2,
+          0.1
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.9
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.8
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m130_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm040_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.01,
+          0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.13
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 5.0
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.200000018,
+          0.149019614,
+          0.200000018,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 2.0
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.4
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.2
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          0.82745105,
+          0.90196085,
+          0.6
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.01,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.007,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.003,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m200_default_snow": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m240_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm250_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.02,
+          0.02
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.02,
+          -0.02
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.15
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 2.0
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.08627451,
+          0.149019614,
+          0.0980392247,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 4.0
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.22
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.88
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          0.90196085,
+          0.90196085
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.005,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.003,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.002,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m250_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm250_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.02,
+          0.02
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.02,
+          -0.02
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.15
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 2.0
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.188235313,
+          0.149019614,
+          0.0980392247,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 4.0
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.22
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.88
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          0.90196085,
+          0.90196085,
+          0.90196085
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.005,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.003,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.002,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m310_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm040_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          0.8980393,
+          0.8980393
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.01,
+          0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.13
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 2.5
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.200000018,
+          0.149019614,
+          0.200000018,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 1.2
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.88
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          0.82745105,
+          0.7490196,
+          0.5411765
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.004,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.002,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.001,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m360_defaultalpha": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong.spx",
+    "Description": "標準\r\nm360用　\r\nデフューズ　スペキュラ　α抜き",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 5
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m470_default": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 1.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "m560_water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm040_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.01,
+          0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.1
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 2.5
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.0,
+          0.247058839,
+          0.298039228,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 1.2
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.88
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.004,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.002,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.001,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "multiground": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\MultiGround.spx",
+    "Description": "標準\r\nデフューズ×2　スペキュラ×2　バンプ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      },
+      {
+        "Name": "g_DiffuseMapColor2",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower2",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor2",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower2",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower2",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Diffuse_2",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 3,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular_2",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 4,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "multiground_test": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\MultiGround_test.spx",
+    "Description": "マルチグラウンド　テスト\r\n",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 10.0
+      },
+      {
+        "Name": "g_DiffuseMapColor2",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower2",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor2",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower2",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower2",
+        "Type": 3,
+        "Value": 10.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Diffuse_2",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 3,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular_2",
+        "Extended": false,
+        "UVNumber": 2,
+        "ShaderDataIndex": 4,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "nolight": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\NoLight.spx",
+    "Description": "標準\r\nデフューズ　ノーライト",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "nolightalpha": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\NoLightAlpha.spx",
+    "Description": "標準\r\nデフューズ　ノーライト　アルファ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "nolightblend": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\NoLightBlend.spx",
+    "Description": "標準\r\nデフューズ　ノーライト　アルファ（加算）",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 3
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "nolightblend_bright": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\NoLightBlend.spx",
+    "Description": "標準\r\nデフューズ　ノーライト　アルファ（加算）",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 3
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          3.00000024,
+          3.00000024,
+          3.00000024
+        ]
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "nolightnofog": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\NoLightNoFog.spx",
+    "Description": "標準\r\nデフューズ　ノーライト　ノーフォグ　",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "nolightnofogalpha": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\NoLightNoFogAlpha.spx",
+    "Description": "標準\r\nデフューズ　ノーライト　ノーフォグ　アルファ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "nolightnoscatterblend": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\NoLightNoScatterBlend.spx",
+    "Description": "標準\r\nPA用　デフューズ　ノーライト　ノーフォグ　ノースキャッタリング　",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 3
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "phong": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\PhongBumpEnv.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ　バンプ　リフレクション",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 1.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Envmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 9,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "shadow": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Shadow.spx",
+    "Description": "",
+    "Params": [
+      {
+        "Name": "g_ShadowAlphaTest",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_MatAlphaRef",
+        "Type": 1,
+        "Value": 0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Opacity",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "shadowalpha": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Shadow.spx",
+    "Description": "",
+    "Params": [
+      {
+        "Name": "g_ShadowAlphaTest",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_MatAlphaRef",
+        "Type": 1,
+        "Value": 0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Opacity",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "simple": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Simple.spx",
+    "Description": "標準\r\nデフューズ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "simplealpha": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Simple.spx",
+    "Description": "標準\r\nデフューズ 　アルファ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "simplebump": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\SimpleBump.spx",
+    "Description": "標準\r\n足跡用　デフューズ　バンプ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "snow": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Phong.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "snowbumpmap": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\PhongBump.spx",
+    "Description": "標準\r\nデフューズ　スペキュラ　バンプ",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Diffuse",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 0,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Specular",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 1,
+        "Path": "",
+        "UnkFloats": []
+      },
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  },
+  "water": {
+    "ShaderPath": "N:\\AC45\\data\\material\\spx\\Water.spx",
+    "Description": "標準\r\nm250_水面用",
+    "Params": [
+      {
+        "Name": "g_BlendMode",
+        "Type": 1,
+        "Value": 0
+      },
+      {
+        "Name": "g_DiffuseMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_DiffuseMapColorPower",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_SpecularMapColor",
+        "Type": 5,
+        "Value": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_SpecularMapColorPower",
+        "Type": 3,
+        "Value": 6.0
+      },
+      {
+        "Name": "g_SpecularPower",
+        "Type": 3,
+        "Value": 70.0
+      },
+      {
+        "Name": "g_TexScrollType",
+        "Type": 1,
+        "Value": 1
+      },
+      {
+        "Name": "g_TexScroll_0",
+        "Type": 4,
+        "Value": [
+          0.02,
+          0.02
+        ]
+      },
+      {
+        "Name": "g_TexScroll_1",
+        "Type": 4,
+        "Value": [
+          -0.02,
+          -0.02
+        ]
+      },
+      {
+        "Name": "g_TexScroll_2",
+        "Type": 4,
+        "Value": [
+          0.01,
+          -0.01
+        ]
+      },
+      {
+        "Name": "g_ReflectBand",
+        "Type": 3,
+        "Value": 0.15
+      },
+      {
+        "Name": "g_RefractBand",
+        "Type": 3,
+        "Value": 0.03
+      },
+      {
+        "Name": "g_BumpMapSmoose",
+        "Type": 3,
+        "Value": 2.0
+      },
+      {
+        "Name": "g_WaterColor",
+        "Type": 6,
+        "Value": [
+          0.129411772,
+          0.180392161,
+          0.149019614,
+          1.0
+        ]
+      },
+      {
+        "Name": "g_WaterClearness",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_FresnelPow",
+        "Type": 3,
+        "Value": 4.0
+      },
+      {
+        "Name": "g_FresnelBias",
+        "Type": 3,
+        "Value": 0.22
+      },
+      {
+        "Name": "g_FresnelScale",
+        "Type": 3,
+        "Value": 0.45
+      },
+      {
+        "Name": "g_FresnelColor",
+        "Type": 5,
+        "Value": [
+          0.9490197,
+          0.90196085,
+          0.90196085
+        ]
+      },
+      {
+        "Name": "g_WaterFadeBegin",
+        "Type": 3,
+        "Value": 0.25
+      },
+      {
+        "Name": "g_TileScale_0",
+        "Type": 4,
+        "Value": [
+          0.005,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_1",
+        "Type": 4,
+        "Value": [
+          0.003,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileScale_2",
+        "Type": 4,
+        "Value": [
+          0.002,
+          0.0
+        ]
+      },
+      {
+        "Name": "g_TileBlend_0",
+        "Type": 3,
+        "Value": 1.0
+      },
+      {
+        "Name": "g_TileBlend_1",
+        "Type": 3,
+        "Value": 0.5
+      },
+      {
+        "Name": "g_TileBlend_2",
+        "Type": 3,
+        "Value": 0.4
+      }
+    ],
+    "Textures": [
+      {
+        "Type": "g_Bumpmap",
+        "Extended": false,
+        "UVNumber": 1,
+        "ShaderDataIndex": 2,
+        "Path": "",
+        "UnkFloats": []
+      }
+    ],
+    "Compression": 1
+  }
+}

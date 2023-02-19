@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using SoulsFormats;
+using SoulsFormats.AC4;
 
 namespace ACFAModelReplacer
 {
@@ -34,8 +36,19 @@ namespace ACFAModelReplacer
             Logger.createLog();
         }
 
-        // Replace FLVER0 with model from FLVER2
+        // Convert FLVER2 model to FLVER0 model
         private void OpenFMS_click(object sender, EventArgs e)
+        {
+            ConversionResultStatusLabelMFSS.Text = "";
+            string flver2ModelPath = Util.GetFilePath("FLVER2 Model to convert");
+            FLVER2 flver2 = FLVER2.Read(flver2ModelPath);
+            FLVER0 flver0 = Converter.ConvertFlver2Flver0(flver2);
+            flver0.Write($"{flver2ModelPath}_converted");
+            ConversionResultStatusLabelMFSS.Text = "Conversion Successful";
+        }
+
+        // Replace FLVER0 with model from FLVER2
+        private void ReplaceFLVER0FMS_Click(object sender, EventArgs e)
         {
             ConversionResultStatusLabelMFSS.Text = "";
             string flver2ModelPath = Util.GetFilePath("FLVER2 Model to convert");
@@ -46,12 +59,6 @@ namespace ACFAModelReplacer
             if (!File.Exists($"{flver0DonorModelPath}.bak")) File.Copy(flver0DonorModelPath, $"{flver0DonorModelPath}.bak");
             replacedFlver0Model.Write(flver0DonorModelPath);
             ConversionResultStatusLabelMFSS.Text = "Conversion Successful";
-        }
-
-        // TODO: Show About form message
-        private void AboutHMS_Click(object sender, EventArgs e)
-        {
-
         }
 
         // Dump a selection of mtds
@@ -104,6 +111,31 @@ namespace ACFAModelReplacer
             var json = JsonConvert.SerializeObject(newLayouts, Formatting.Indented);
             File.WriteAllText($"{Util.resFolderPath}/FLVER0/newlayouts.json", json);
             ConversionResultStatusLabelMFSS.Text = $"Finished dumping buffer layouts to {Util.resFolderPath}/FLVER0/newlayouts.json successfully";
+        }
+
+        // Decompresses 000 file to get AC4 model inside
+        private void Extract000FMS_Click(object sender, EventArgs e)
+        {
+            string zero3Path = Util.GetFilePath("Armored Core 4 000 file");
+            if (!Zero3.Is(zero3Path)) { ConversionResultStatusLabelMFSS.Text = "Selected path is not a 000 file, BND unpack support coming later"; return; }
+            Zero3 zero3 = Zero3.Read(zero3Path);
+            //string zero3Dir = $"{Path.GetDirectoryName(zero3Path)}/{Path.GetFileNameWithoutExtension(zero3Path)}-000/";
+            //Directory.CreateDirectory(zero3Dir);
+            foreach (Zero3.File file in zero3.Files)
+            {
+                string sourceDir = Path.GetDirectoryName(zero3Path);
+                string filename = Path.GetFileName(zero3Path);
+                string targetDir = $"{sourceDir}\\{filename.Replace('.', '-')}";
+                string outPath = $@"{targetDir}\{file.Name.Replace('/', '\\')}";
+                Directory.CreateDirectory(Path.GetDirectoryName(outPath));
+                File.WriteAllBytes(outPath, file.Bytes);
+            }
+        }
+
+        // TODO: Show About form message
+        private void AboutHMS_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
