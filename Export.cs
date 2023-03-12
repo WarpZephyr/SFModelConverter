@@ -36,26 +36,6 @@ namespace SFModelConverter
         }
 
         /// <summary>
-        /// Computes the transform a vertex should have from its bone and that bone's parent bones
-        /// </summary>
-        /// <param name="model">A FromSoftware model</param>
-        /// <param name="mesh">A mesh from the FromSoftware model</param>
-        /// <param name="vertex">A vertex from the mesh of the FromSoftware model</param>
-        /// <returns>A transform for vertex from its bone and that bone's parent bones</returns>
-        public static System.Numerics.Matrix4x4 ComputeTransform(FLVER0 model, FLVER0.Mesh mesh, FLVER.Vertex vertex)
-        {
-            FLVER.Bone bone = model.Bones[mesh.BoneIndices[vertex.NormalW]];
-            System.Numerics.Matrix4x4 transform = bone.ComputeLocalTransform();
-            while (bone.ParentIndex != 1)
-            {
-                bone = model.Bones[bone.ParentIndex];
-                transform *= bone.ComputeLocalTransform();
-            }
-
-            return transform;
-        }
-
-        /// <summary>
         /// Adds all the UVs in a FromSoftware model vertex to the texture coordinate channels of an assimp mesh
         /// </summary>
         /// <param name="UVs">A list of UVs from a FromSoftware model vertex</param>
