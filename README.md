@@ -19,7 +19,7 @@ The swap order will be the order the options are ordered in.
 I am currently working on this project and hope to fixed exports, and add import ability for SoulsFormats model types.
 
 # Building
-If you want to build the project you should clone it with these command in git bash:  
+If you want to build the project you should clone it with these commands in git bash:  
 ```
 git clone https://github.com/WarpZephyr/SFModelConverter.git  
 git clone https://github.com/WarpZephyr/SoulsFormats.git  
