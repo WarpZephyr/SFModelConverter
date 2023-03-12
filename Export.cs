@@ -58,8 +58,8 @@ namespace SFModelConverter
         {
             for (int i = 0; i < UVs.Count; ++i)
             {
-                Vector3 UV = Vector3.Transform(UVs[i], transform);
-                textureCoordChannels[i].Add(new Vector3D(-UV.X, 1 - UV.Y, 0));
+                Vector3 transformedUV = Vector3.Transform(UVs[i], transform);
+                textureCoordChannels[i].Add(new Vector3D(-transformedUV.X, 1 - transformedUV.Y, 0));
             }
         }
 
