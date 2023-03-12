@@ -1,47 +1,58 @@
 ﻿using System;
 using System.IO;
 
-namespace ACFAModelReplacer
+namespace SFModelConverter
 {
     internal static class Logger
     {
-        // Create log files, overwrite them if they already exist
-        public static void createLog() 
+        public static string log = $"{Util.envFolderPath}/modelreplacer.log";
+        public static string stacktraceLog = $"{Util.envFolderPath}/stacktrace.log";
+
+        /// <summary>
+        /// Create log files and overwrite them if they already exist.
+        /// </summary>
+        public static void CreateLog()
         {
-            File.WriteAllText(Util.acfaModelReplacerLog, String.Empty);
-            File.WriteAllText(Util.stacktraceLog, String.Empty);
+            File.WriteAllText(log, String.Empty);
+            File.WriteAllText(stacktraceLog, String.Empty);
         }
 
-        // Log when an exception has occurred with logs for the user and the dev
-        public static void LogExceptionWithDate(Exception ex, string description) 
+        /// <summary>
+        /// Log something with an exception, date, and time.
+        /// </summary>
+        /// <param name="ex">The exception to log</param>
+        /// <param name="description">The description of what to log</param>
+        public static void LogExceptionWithDate(Exception ex, string description = null)
         {
-            using (StreamWriter sw = File.AppendText(Util.acfaModelReplacerLog))
-            {
-                sw.WriteLine($"{description} on {DateTime.Now}");
-            }
+            using StreamWriter swLog = File.AppendText(log);
+            swLog.WriteLine($"{description} on {DateTime.Now}");
+            swLog.Close();
 
-            using (StreamWriter sw = File.AppendText(Util.stacktraceLog))
-            {
-                sw.WriteLine($"Description: \"{description}\" on {DateTime.Now}\nException: {ex.Message}\nStacktrace: {ex}");
-            }
+            using StreamWriter swStacktrace = File.AppendText(stacktraceLog);
+            swStacktrace.WriteLine($"Description: \"{description ?? "Unknown Error"}\" on {DateTime.Now}\nException: {ex.Message}\nStacktrace: {ex}");
+            swStacktrace.Close();
         }
 
-        // Log when no exception
-        public static void LogWithDate(string description) 
+        /// <summary>
+        /// Log something with the date and time.
+        /// </summary>
+        /// <param name="description">The description of what to log</param>
+        public static void LogWithDate(string description = null)
         {
-            using (StreamWriter sw = File.AppendText(Util.acfaModelReplacerLog))
-            {
-                sw.WriteLine($"{description} on {DateTime.Now}");
-            }
+            using StreamWriter sw = File.AppendText(log);
+            sw.WriteLine($"{description ?? "Log with date was called"} on {DateTime.Now}");
+            sw.Close();
         }
 
-        // Log no date
-        public static void Log(string description)
+        /// <summary>
+        /// Log something.
+        /// </summary>
+        /// <param name="description">The description of what to log</param>
+        public static void Log(string description = null)
         {
-            using (StreamWriter sw = File.AppendText(Util.acfaModelReplacerLog))
-            {
-                sw.WriteLine($"{description}");
-            }
+            using StreamWriter sw = File.AppendText(log);
+            sw.WriteLine($"{description ?? "Log was called"}");
+            sw.Close();
         }
     }
 }

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ACFAModelReplacer")]
-[assembly: AssemblyDescription("Armored Core: For Answer Model Replacer")]
+[assembly: AssemblyTitle("SFModelConverter")]
+[assembly: AssemblyDescription("SoulsFormats Model Converter")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ACFAModelReplacer")]
+[assembly: AssemblyProduct("SFModelConverter")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

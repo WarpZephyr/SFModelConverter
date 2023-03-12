@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ACFAModelReplacer
+namespace SFModelConverter
 {
     internal class OverrideToolStripRenderer : ToolStripProfessionalRenderer
     {

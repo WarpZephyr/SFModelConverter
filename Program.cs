@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ACFAModelReplacer
+namespace SFModelConverter
 {
     internal static class Program
     {

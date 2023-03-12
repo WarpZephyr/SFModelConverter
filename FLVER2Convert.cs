@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using SoulsFormats;
 
-namespace ACFAModelReplacer
+namespace SFModelConverter
 {
     internal static class FLVER2Convert
     {
@@ -25,7 +25,7 @@ namespace ACFAModelReplacer
                 Vertices = flver2Mesh.Vertices,
                 VertexIndices = flver2Mesh.FaceSets[0].Indices,
                 CullBackfaces = flver2Mesh.FaceSets[0].CullBackfaces,
-                TriangleStrip = Convert.ToByte(flver2Mesh.FaceSets[0].TriangleStrip),
+                TriangleStrip = System.Convert.ToByte(flver2Mesh.FaceSets[0].TriangleStrip),
                 Unk46 = 0
             };
 

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using SoulsFormats;
 using System;
 
-namespace ACFAModelReplacer
+namespace SFModelConverter
 {
     internal static class Dumper
     {
@@ -48,7 +48,7 @@ namespace ACFAModelReplacer
         }
 
         // Dump all MTDs from user selection
-        public static void DumpMTDs(List<string> mtdPaths)
+        public static void DumpMTDs(string[] mtdPaths)
         {
             foreach (string mtdFile in mtdPaths)
             {
@@ -62,7 +62,7 @@ namespace ACFAModelReplacer
         }
 
         // Dump all flv buffer layouts from user flv selection
-        public static void DumpBuffers(List<string> flvPaths)
+        public static void DumpBuffers(string[] flvPaths)
         {
             foreach (string flvFile in flvPaths)
             {

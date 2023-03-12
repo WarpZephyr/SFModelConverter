@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACFAModelReplacer", "ACFAModelReplacer.csproj", "{3905B34B-0373-431E-8D35-BA63BE4797A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFModelConverter", "SFModelConverter.csproj", "{3905B34B-0373-431E-8D35-BA63BE4797A3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoulsFormats", "..\SoulsFormats\SoulsFormats\SoulsFormats.csproj", "{E8216E1F-877A-4730-A285-1E405D966FA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssimpNet", "..\assimpnet\AssimpNet\AssimpNet.csproj", "{4E48AD47-9AF0-44A7-B65A-A8032FD2158C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E8216E1F-877A-4730-A285-1E405D966FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8216E1F-877A-4730-A285-1E405D966FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8216E1F-877A-4730-A285-1E405D966FA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E48AD47-9AF0-44A7-B65A-A8032FD2158C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E48AD47-9AF0-44A7-B65A-A8032FD2158C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E48AD47-9AF0-44A7-B65A-A8032FD2158C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E48AD47-9AF0-44A7-B65A-A8032FD2158C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
