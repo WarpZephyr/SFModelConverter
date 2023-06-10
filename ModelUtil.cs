@@ -1,6 +1,7 @@
 ﻿using Assimp;
-using SoulsFormats.Other;
+using SoulsFormats;
 using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
 
 namespace SFModelConverter
@@ -8,7 +9,7 @@ namespace SFModelConverter
     /// <summary>
     /// Class for converting vectors in different ways
     /// </summary>
-    internal static class Vector
+    internal static class ModelUtil
     {
         /// <summary>
         /// Converts a Vector3 to an assimp Vector3D
@@ -156,8 +157,10 @@ namespace SFModelConverter
         public static System.Numerics.Matrix4x4 ComputeTransformNonDynamic(dynamic model, dynamic mesh, dynamic vertex)
         {
             int boneIndiceIndex;
-            if (model is MDL4) boneIndiceIndex = (int)vertex.Normal.W;
-            else boneIndiceIndex = vertex.NormalW;
+            if (model is MDL4)
+                boneIndiceIndex = (int)vertex.Normal.W;
+            else
+                boneIndiceIndex = vertex.NormalW;
 
             var bone = model.Bones[mesh.BoneIndices[boneIndiceIndex]];
             System.Numerics.Matrix4x4 transform = bone.ComputeLocalTransform();
@@ -168,6 +171,51 @@ namespace SFModelConverter
             }
 
             return transform;
+        }
+
+        public static System.Numerics.Matrix4x4 ComputeTransform(this FLVER.Bone bone, List<FLVER.Bone> bones)
+        {
+            var transform = bone.ComputeLocalTransform();
+            while (bone.ParentIndex != -1)
+            {
+                if (!(bone.ParentIndex < 0 || bone.ParentIndex > bones.Count))
+                {
+                    bone = bones[bone.ParentIndex];
+                    transform *= bone.ComputeLocalTransform();
+                }
+                else
+                    throw new InvalidDataException("Bone has a parent index outside of the provided bone array.");
+            }
+
+            return transform;
+        }
+
+        /// <summary>
+        /// Converts a System.Numerics.Matrix4x4 into an Assimp.Matrix4x4.
+        /// </summary>
+        /// <param name="matrix">A System.Numerics.Matrix4x4.</param>
+        /// <returns>An Assimp.Matrix4x4.</returns>
+        public static Assimp.Matrix4x4 ToAssimpMatrix4x4(this System.Numerics.Matrix4x4 matrix)
+        {
+            return new Assimp.Matrix4x4
+            {
+                A1 = matrix.M11,
+                A2 = matrix.M12,
+                A3 = matrix.M13,
+                A4 = matrix.M14,
+                B1 = matrix.M21,
+                B2 = matrix.M22,
+                B3 = matrix.M23,
+                B4 = matrix.M24,
+                C1 = matrix.M31,
+                C2 = matrix.M32,
+                C3 = matrix.M33,
+                C4 = matrix.M34,
+                D1 = matrix.M41,
+                D2 = matrix.M42,
+                D3 = matrix.M43,
+                D4 = matrix.M44,
+            };
         }
     }
 }

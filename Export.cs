@@ -1,30 +1,27 @@
-﻿using Assimp;
-using Assimp.Configs;
-using SoulsFormats;
-using SoulsFormats.Other;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Numerics;
+using System.Collections.Generic;
+using SoulsFormats;
+using Assimp;
+using System;
+using Newtonsoft.Json.Bson;
+using System.Linq;
 
 namespace SFModelConverter
 {
     /// <summary>
-    /// Class for exporting SoulsFormats models using Assimp, uses an OOP approach
+    /// Class for exporting SoulsFormats models using Assimp.
     /// </summary>
     internal static class Export
     {
         /// <summary>
-        /// Adds materials from a FromSoftware model to an assimp scene
+        /// Adds materials from a FLVER0 to an assimp scene.
         /// </summary>
-        /// <param name="model">A FromSoftware model</param>
-        /// <param name="scene">An assimp scene</param>
+        /// <param name="model">A FLVER0.</param>
+        /// <param name="scene">An assimp scene.</param>
         public static void AddMaterials(FLVER0 model, Scene scene)
         {
-            // Add materials
-            foreach (FLVER0.Material material in model.Materials)
+            foreach (var material in model.Materials)
             {
                 Material newMaterial = new()
                 {
@@ -36,161 +33,185 @@ namespace SFModelConverter
         }
 
         /// <summary>
-        /// Adds all the UVs in a FromSoftware model vertex to the texture coordinate channels of an assimp mesh
+        /// Add bones from a FLVER0 to an assimp scene.
         /// </summary>
-        /// <param name="UVs">A list of UVs from a FromSoftware model vertex</param>
-        /// <param name="textureCoordChannels">Texture coordinate channels from an assimp mesh</param>
-        public static void AddVertexUVs(List<Vector3> UVs, List<Vector3D>[] textureCoordChannels)
+        /// <param name="model">A FLVER0.</param>
+        /// <param name="rootNode">The root node of the scene.</param>
+        public static void AddBones(FLVER0 model, Node rootNode)
         {
-            for (int i = 0; i < UVs.Count; ++i)
+            Node[] boneArray = new Node[model.Bones.Count];
+            //Assign bones
+            for (int i = 0; i < model.Bones.Count; i++)
             {
-                Vector3 UV = UVs[i];
-                textureCoordChannels[i].Add(new Vector3D(-UV.X, 1 - UV.Y, 0));
+                var bone = model.Bones[i];
+                Node parentNode;
+                if (bone.ParentIndex == -1)
+                    parentNode = rootNode;
+                else
+                    parentNode = boneArray[bone.ParentIndex];
+                var aiNode = new Node($"Bone_{i}_{bone.Name}", parentNode);
+
+                //Get local transform
+                aiNode.Transform = bone.ComputeTransform(model.Bones).ToAssimpMatrix4x4();
+
+                parentNode.Children.Add(aiNode);
+                boneArray[i] = aiNode;
             }
         }
 
         /// <summary>
-        /// Transforms each, then dds all the UVs in a FromSoftware model vertex to the texture coordinate channels of an assimp mesh
+        /// Adds the vertices from a FLVER0 mesh to an assimp mesh.
         /// </summary>
-        /// <param name="UVs">A list of UVs from a FromSoftware model vertex</param>
-        /// <param name="textureCoordChannels">Texture coordinate channels from an assimp mesh</param>
-        public static void AddTransformedVertexUVs(List<Vector3> UVs, List<Vector3D>[] textureCoordChannels, System.Numerics.Matrix4x4 transform)
+        /// <param name="model">A FLVER0.</param>
+        /// <param name="mesh">A mesh from the provided FLVER0.</param>
+        /// <param name="newMesh">An assimp mesh.</param>
+        public static void AddVertices(FLVER0 model, FLVER0.Mesh mesh, Mesh newMesh, Dictionary<int, Bone> boneMap)
         {
-            for (int i = 0; i < UVs.Count; ++i)
+            for (int i = 0; i < mesh.Vertices.Count; i++)
             {
-                Vector3 transformedUV = Vector3.Transform(UVs[i], transform);
-                textureCoordChannels[i].Add(new Vector3D(-transformedUV.X, 1 - transformedUV.Y, 0));
-            }
-        }
-
-        /// <summary>
-        /// Adds all the colors in a FromSoftware model vertex to the vertex color channels of an assimp mesh
-        /// </summary>
-        /// <param name="colors">A list of colors from a FromSoftware model vertex</param>
-        /// <param name="vertexColorChannels">Vertex color channels from an assimp mesh</param>
-        public static void AddVertexColors(dynamic colors, List<Color4D>[] vertexColorChannels)
-        {
-            for (int i = 0; i < colors.Count; ++i)
-            {
-                var color = colors[i];
-                vertexColorChannels[i].Add(new(color.R, color.G, color.B, color.A));
-            }
-        }
-
-        /// <summary>
-        /// Adds the vertices from a FromSoftware mesh to an assimp mesh
-        /// </summary>
-        /// <param name="model">A FromSoftware model</param>
-        /// <param name="mesh">A mesh from the FromSoftware model</param>
-        /// <param name="newMesh">An assimp mesh</param>
-        public static void AddVerticesNonDynamic(dynamic model, dynamic mesh, Mesh newMesh)
-        {
-            foreach (var vertex in mesh.Vertices)
-            {
-                if (vertex.NormalW != -1)
+                var vertex = mesh.Vertices[i];
+                if (mesh.BoneIndices.Length != 0)
                 {
-                    var transform = Vector.ComputeTransformNonDynamic(model, mesh, vertex);
-                    newMesh.Vertices.Add(Vector.Vector3TransformedToVector3D(vertex.Position, transform));
-                    newMesh.Normals.Add(Vector.Vector3TransformedToVector3D(vertex.Normal, transform));
-                    newMesh.BiTangents.Add(Vector.Vector4TransformedToVector3D(vertex.Bitangent, transform));
-                    if (vertex.Tangents.Count > 0) newMesh.Tangents.Add(Vector.Vector4TransformedToVector3D(vertex.Tangents[0], transform));
-                    AddTransformedVertexUVs(vertex.UVs, newMesh.TextureCoordinateChannels, transform);
+                    var transform = ModelUtil.ComputeTransformNonDynamic(model, mesh, vertex);
+                    newMesh.Vertices.Add(ModelUtil.Vector3TransformedToVector3D(vertex.Position, transform));
+                    newMesh.Normals.Add(ModelUtil.Vector3TransformedToVector3D(vertex.Normal, transform));
+                    newMesh.BiTangents.Add(ModelUtil.Vector4TransformedToVector3D(vertex.Bitangent, transform));
+                    foreach (var tangent in vertex.Tangents)
+                        newMesh.Tangents.Add(ModelUtil.Vector4TransformedToVector3D(tangent, transform));
                 }
                 else
                 {
-                    newMesh.Vertices.Add(Vector.Vector3ToVector3D(vertex.Position));
-                    newMesh.Normals.Add(Vector.Vector3ToVector3D(vertex.Normal));
-                    newMesh.BiTangents.Add(Vector.Vector4ToVector3D(vertex.Bitangent));
-                    if (vertex.Tangents.Count > 0) newMesh.BiTangents.Add(Vector.Vector4ToVector3D(vertex.Tangents[0]));
-                    AddVertexUVs(vertex.UVs, newMesh.TextureCoordinateChannels);
+                    newMesh.Vertices.Add(ModelUtil.Vector3ToVector3D(vertex.Position));
+                    newMesh.Normals.Add(ModelUtil.Vector3ToVector3D(vertex.Normal));
+                    newMesh.BiTangents.Add(ModelUtil.Vector4ToVector3D(vertex.Bitangent));
+                    foreach(var tangent in vertex.Tangents)
+                        newMesh.Tangents.Add(ModelUtil.Vector4ToVector3D(tangent));
                 }
 
-                AddVertexColors(vertex.Colors, newMesh.VertexColorChannels);
-            }
-        }
+                if (vertex.UVs.Count > 0)
+                {
+                    var uv1 = vertex.UVs[0];
+                    var aiTextureCoordinate = new Vector3D(uv1.X, uv1.Y, 0f);
+                    newMesh.TextureCoordinateChannels[0].Add(aiTextureCoordinate);
+                }
+                else
+                {
+                    var aiTextureCoordinate = new Vector3D(1, 1, 1);
+                    newMesh.TextureCoordinateChannels[0].Add(aiTextureCoordinate);
+                }
 
-        public static void AddVerticesDynamic(FLVER0 model, FLVER0.Mesh mesh, Mesh newMesh)
-        {
-            throw new NotImplementedException();
-            foreach (FLVER.Vertex vertex in mesh.Vertices)
-            {
-                
-            }
-        }
+                // Add UVs
+                if (vertex.UVs.Count > 1)
+                {
+                    var uv2 = vertex.UVs[1];
+                    var aiTextureCoordinate = new Vector3D(uv2.X, uv2.Y, 0f);
+                    newMesh.TextureCoordinateChannels[1].Add(aiTextureCoordinate);
+                }
+                else
+                {
+                    var aiTextureCoordinate = new Vector3D(1, 1, 1);
+                    newMesh.TextureCoordinateChannels[1].Add(aiTextureCoordinate);
+                }
 
-        public static void AddVerticesCheckDynamic(FLVER0 model, FLVER0.Mesh mesh, Mesh newMesh, byte dynamic)
-        {
-            if (dynamic != 1) AddVerticesNonDynamic(model, mesh, newMesh);
-            else AddVerticesDynamic(model, mesh, newMesh);
+                if (vertex.UVs.Count > 2)
+                {
+                    var uv3 = vertex.UVs[2];
+                    var aiTextureCoordinate = new Vector3D(uv3.X, uv3.Y, 0f);
+                    newMesh.TextureCoordinateChannels[2].Add(aiTextureCoordinate);
+                }
+                else
+                {
+                    var aiTextureCoordinate = new Vector3D(1, 1, 1);
+                    newMesh.TextureCoordinateChannels[2].Add(aiTextureCoordinate);
+                }
+
+                if (vertex.UVs.Count > 3)
+                {
+                    var uv4 = vertex.UVs[3];
+                    var aiTextureCoordinate = new Vector3D(uv4.X, uv4.Y, 0f);
+                    newMesh.TextureCoordinateChannels[3].Add(aiTextureCoordinate);
+                }
+                else
+                {
+                    var aiTextureCoordinate = new Vector3D(1, 1, 1);
+                    newMesh.TextureCoordinateChannels[3].Add(aiTextureCoordinate);
+                }
+
+                for (int uv = 0; uv < newMesh.TextureCoordinateChannelCount; uv++)
+                {
+                    newMesh.UVComponentCount[uv] = 2;
+                }
+
+                // Add vertex colors
+                if (vertex.Colors.Count > 0)
+                {
+                    var color = vertex.Colors[0];
+                    newMesh.VertexColorChannels[0].Add(new(color.R, color.G, color.B, color.A));
+                }
+                if (vertex.Colors.Count > 1)
+                {
+                    var color = vertex.Colors[1];
+                    newMesh.VertexColorChannels[1].Add(new(color.R, color.G, color.B, color.A));
+                }
+
+                // Add bone weights
+                var boneIndex = vertex.NormalW;
+                if (boneIndex == -1)
+                    continue;
+
+                var boneWeight = 1f;
+
+                if (!boneMap.Keys.Contains(boneIndex))
+                {
+                    var newBone = new Bone();
+                    var rawBone = model.Bones[mesh.BoneIndices[boneIndex]];
+
+                    newBone.Name = $"({mesh.BoneIndices[boneIndex]})" + rawBone.Name;
+                    newBone.VertexWeights.Add(new VertexWeight(i, boneWeight));
+
+                    var invTransform = rawBone.ComputeTransform(model.Bones).ToAssimpMatrix4x4();
+
+                    newBone.OffsetMatrix = invTransform;
+
+                    boneMap[boneIndex] = newBone;
+                }
+
+                if (!boneMap[boneIndex].VertexWeights.Any(x => x.VertexID == i))
+                    boneMap[boneIndex].VertexWeights.Add(new VertexWeight(i, boneWeight));
+            }
         }
 
         /// <summary>
-        /// Adds faces from a FromSoftware FLVER0 model mesh to an assimp mesh
+        /// Adds meshes from an imported FLVER0 to an assimp scene.
         /// </summary>
-        /// <param name="mesh">A mesh from the Fromsoftware FLVER0 model</param>
-        /// <param name="newMesh">An assimp mesh</param>
-        /// <param name="version">The version of a FromSoftware FLVER0 model</param>
-        public static void AddFaces(FLVER0.Mesh mesh, Mesh newMesh, int version)
-        {
-            foreach (int[] indices in mesh.GetFacesIndices(version))
-            {
-                newMesh.Faces.Add(new Face(indices));
-            }
-        }
-
-        /// <summary>
-        /// Adds faces from a FromSoftware MDL4 model mesh to an assimp mesh
-        /// </summary>
-        /// <param name="mesh">A mesh from the Fromsoftware MDL4 model</param>
-        /// <param name="newMesh">An assimp mesh</param>
-        public static void AddFaces(MDL4.Mesh mesh, Mesh newMesh)
-        {
-            foreach (int[] indices in mesh.GetFacesIndices())
-            {
-                newMesh.Faces.Add(new Face(indices));
-            }
-        }
-
-        /// <summary>
-        /// Adds faces from a FromSoftware FLVER2 model mesh to an assimp mesh
-        /// </summary>
-        /// <param name="mesh">A mesh from the Fromsoftware FLVER2 model</param>
-        /// <param name="newMesh">An assimp mesh</param>
-        public static void AddFaces(FLVER2.Mesh mesh, Mesh newMesh)
-        {
-            foreach (FLVER2.FaceSet faceset in mesh.FaceSets)
-            {
-                newMesh.Faces.Add(new Face(faceset.Indices.ToArray()));
-            }
-        }
-
-        /// <summary>
-        /// Adds meshes from an imported FromSoftware model to an assimp scene
-        /// </summary>
-        /// <param name="model">A FromSoftware model</param>
-        /// <param name="scene">An assimp scene</param>
-        public static void AddMeshes(dynamic model, Scene scene)
+        /// <param name="model">A FLVER0.</param>
+        /// <param name="scene">An assimp scene.</param>
+        public static void AddMeshes(FLVER0 model, Scene scene)
         {
             int meshCounter = 0;
             foreach (var mesh in model.Meshes)
             {
-                Mesh newMesh = new("Mesh_M" + meshCounter, PrimitiveType.Triangle);
+                var boneMap = new Dictionary<int, Bone>();
+                var newMesh = new Mesh("Mesh_M" + meshCounter, PrimitiveType.Triangle);
 
                 // Add vertices
-                if (model is MDL4) AddVerticesCheckDynamic(model, mesh, newMesh, mesh.VertexFormat);
-                else AddVerticesCheckDynamic(model, mesh, newMesh, mesh.Dynamic);
+                AddVertices(model, mesh, newMesh, boneMap);
+
+                //Add bones to mesh
+                newMesh.Bones.AddRange(boneMap.Values);
 
                 // Add faces
-                if (model is FLVER0) AddFaces(mesh, newMesh, model.Header.Version);
-                else AddFaces(mesh, newMesh);
+                foreach (int[] indices in mesh.GetFaceVertexIndices(model.Header.Version))
+                {
+                    newMesh.Faces.Add(new Face(indices));
+                }
 
-                int meshIndex = mesh.MaterialIndex;
-                newMesh.MaterialIndex = meshIndex;
+                newMesh.MaterialIndex = mesh.MaterialIndex;
                 scene.Meshes.Add(newMesh);
 
-                Node node = new()
+                var node = new Node()
                 {
-                    Name = $"M_{meshCounter}_{model.Materials[meshIndex].Name}",
+                    Name = $"Mesh_{meshCounter}",
                 };
 
                 node.MeshIndices.Add(meshCounter);
@@ -200,28 +221,42 @@ namespace SFModelConverter
         }
 
         /// <summary>
-        /// Determines what FromSoftware model type imported FromSoftware model is then reads it
+        /// Exports a FLVER0 model to the chosen model type using assimp.
         /// </summary>
-        /// <param name="path"></param>
-        /// <returns></returns>
-        public static dynamic ReadModel(string path)
+        /// <param name="path">The path to a FLVER0 model.</param>
+        /// <param name="type">The type to export.</param>
+        /// <returns>Whether or not the export was successful.</returns>
+        public static bool ExportModel(string path, string type)
         {
-            if(FLVER0.Is(path)) return FLVER0.Read(path);
-            if(FLVER2.Is(path)) return FLVER2.Read(path);
-            if(MDL4.Is(path)) return MDL4.Read(path);
-            return null;
+            string outPath = $"{Path.GetDirectoryName(path)}\\{Path.GetFileNameWithoutExtension(path)}.{GetExtension(type)}";
+
+            if (!FLVER0.Is(path))
+                return false;
+
+            // Read model and make scene
+            var model = FLVER0.Read(path);
+            var scene = new Scene()
+            {
+                RootNode = new Node()
+            };
+
+            // Export model to scene
+            AddMaterials(model, scene);
+            AddBones(model, scene.RootNode);
+            AddMeshes(model, scene);
+
+            // Export scene to save path
+            return new AssimpContext().ExportFile(scene, outPath, type);
         }
 
         /// <summary>
-        /// Exports a FromSoftware model to the chosen model type using assimp
+        /// Get the extension for a type.
         /// </summary>
-        /// <param name="path">A string containing the path to a Fromsoftware model</param>
-        /// <param name="type">A string containing the type to export</param>
-        /// <returns></returns>
-        public static bool ExportModel(string path, string type, bool[][] flips, bool[][] swaps)
+        /// <param name="type">A supported Assimp type as a string.</param>
+        /// <returns>A file extension without the dot.</returns>
+        public static string GetExtension(string type)
         {
-            // Make save path
-            string saveExtension = type switch
+            return type switch
             {
                 "fbx" => "fbx",
                 "fbxa" => "fbx",
@@ -229,29 +264,6 @@ namespace SFModelConverter
                 "obj" => "obj",
                 _ => type
             };
-            string savePath = $"{Path.GetDirectoryName(path)}\\{Path.GetFileNameWithoutExtension(path)}.{saveExtension}";
-
-            // Read model and make scene
-            var model = ReadModel(path);
-            if (model == null) return false;
-            Scene scene = new()
-            {
-                RootNode = new()
-            };
-
-            // Determine flips and swaps
-            SoulsFormatsFlip.DetermineFlip(model, flips[0], flips[1], flips[2], flips[3]);
-            SoulsFormatsSwap.DetermineSwap(model, swaps[0], swaps[1], swaps[2], swaps[3]);
-
-            // Export model to scene
-            AddMaterials(model, scene);
-            AddMeshes(model, scene);
-
-
-            // Export scene to save path
-            AssimpContext exporter = new();
-            bool success = exporter.ExportFile(scene, savePath, type);
-            return success;
         }
     }
 }

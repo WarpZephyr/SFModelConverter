@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
+using Utilities;
+using Newtonsoft.Json;
+using System;
 
 namespace SFModelConverter
 {
@@ -15,6 +18,31 @@ namespace SFModelConverter
     /// </summary>
     internal static class Convert
     {
+        /// <summary>
+        /// The current model type.
+        /// </summary>
+        private static string CurrentModelType = "FLVER0";
+
+        /// <summary>
+        /// A path to mtds.json.
+        /// </summary>
+        private static string MtdsJsonPath = $"{PathUtil.ResFolderPath}\\{CurrentModelType}\\mtds.json";
+
+        /// <summary>
+        /// A path to layouts.json.
+        /// </summary>
+        private static string LayoutsJsonPath = $"{PathUtil.ResFolderPath}\\{CurrentModelType}\\layouts.json";
+
+        /// <summary>
+        /// The loaded mtds.
+        /// </summary>
+        private static Dictionary<string, MTD> Mtds = JsonConvert.DeserializeObject<Dictionary<string, MTD>>(File.ReadAllText(MtdsJsonPath));
+
+        /// <summary>
+        /// The loaded layouts.
+        /// </summary>
+        private static Dictionary<string, List<FLVER0.BufferLayout>> Layouts = JsonConvert.DeserializeObject<Dictionary<string, List<FLVER0.BufferLayout>>>(File.ReadAllText(LayoutsJsonPath));
+
         /// <summary>
         /// Converts a FLVER0 model into a FBX file, saving the FBX file to the specified path
         /// </summary>
@@ -43,31 +71,10 @@ namespace SFModelConverter
             List<Bone> newBones = new();
             foreach (var bone in model.Bones)
             {
-                var boneMatrix = bone.ComputeLocalTransform();
-                Assimp.Matrix4x4 newOffsetMatrix = new()
-                {
-                    A1 = boneMatrix.M11,
-                    A2 = boneMatrix.M12,
-                    A3 = boneMatrix.M13,
-                    A4 = boneMatrix.M14,
-                    B1 = boneMatrix.M21,
-                    B2 = boneMatrix.M22,
-                    B3 = boneMatrix.M23,
-                    B4 = boneMatrix.M24,
-                    C1 = boneMatrix.M31,
-                    C2 = boneMatrix.M32,
-                    C3 = boneMatrix.M33,
-                    C4 = boneMatrix.M34,
-                    D1 = boneMatrix.M41,
-                    D2 = boneMatrix.M42,
-                    D3 = boneMatrix.M43,
-                    D4 = boneMatrix.M44,
-                };
-
                 Bone newBone = new()
                 {
                     Name = bone.Name,
-                    OffsetMatrix = newOffsetMatrix
+                    OffsetMatrix = bone.ComputeLocalTransform().ToAssimpMatrix4x4()
                 };
 
                 // Get weights
@@ -75,7 +82,8 @@ namespace SFModelConverter
                 {
                     foreach (int boneIndice in mesh.BoneIndices)
                     {
-                        if (boneIndice == -1) continue;
+                        if (boneIndice == -1)
+                            continue;
                         for (int j = 0; j < mesh.Vertices.Count; ++j)
                         {
                             var vertex = mesh.Vertices[j];
@@ -186,7 +194,7 @@ namespace SFModelConverter
                 newMesh.Bones.Add(new Bone());
 
                 // Add faces
-                foreach (int[] array in mesh.GetFacesIndices(model.Header.Version))
+                foreach (int[] array in mesh.GetFaceVertexIndices(model.Header.Version))
                 {
                     newMesh.Faces.Add(new Face(array));
                 }
@@ -214,18 +222,18 @@ namespace SFModelConverter
         // Temporary until full solution is found
         public static void ReplaceFlver0Flver2(string flver2ModelPath)
         {
-            FLVER2 flver2Model = FLVER2.Read(flver2ModelPath);
+            FLVER2 oldmodel = FLVER2.Read(flver2ModelPath);
 
-            FLVER0 flver0Model = new()
+            FLVER0 newmodel = new()
             {
-                Bones = flver2Model.Bones,
-                Dummies = flver2Model.Dummies,
+                Bones = oldmodel.Bones,
+                Dummies = oldmodel.Dummies,
                 Header = new FLVER0.FLVERHeader()
                 {
                     BigEndian = true,
-                    BoundingBoxMax = flver2Model.Header.BoundingBoxMax,
-                    BoundingBoxMin = flver2Model.Header.BoundingBoxMin,
-                    Unicode = flver2Model.Header.Unicode,
+                    BoundingBoxMax = oldmodel.Header.BoundingBoxMax,
+                    BoundingBoxMin = oldmodel.Header.BoundingBoxMin,
+                    Unicode = oldmodel.Header.Unicode,
                     Unk4A = 1,
                     Unk4B = 0,
                     Unk4C = 65535,
@@ -235,17 +243,17 @@ namespace SFModelConverter
                 }
             };
 
-            flver2Model.Meshes.ForEach(x => flver0Model.Meshes.Add(FLVER2Convert.GetMesh(x, flver2Model)));
-            flver2Model.Materials.ForEach(x => flver0Model.Materials.Add(FLVER2Convert.GetMaterial(x)));
+            oldmodel.Meshes.ForEach(x => newmodel.Meshes.Add(GetMesh(x, oldmodel)));
+            oldmodel.Materials.ForEach(x => newmodel.Materials.Add(GetMaterial(x)));
 
-            string flver0DonorModelPath = Util.GetFilePath("FLVER0 model you wish to replace");
-            FLVER0 flver0DonorModel = FLVER0.Read(flver0DonorModelPath);
+            string donorPath = PathUtil.GetFilePath("C:\\Users", "Select a FLVER0 model to replace");
+            FLVER0 donor = FLVER0.Read(donorPath);
 
             //flver0Model.Materials = flver0DonorModel.Materials;
-            flver0Model.Dummies = flver0DonorModel.Dummies;
-            flver0Model.Bones = flver0DonorModel.Bones;
+            newmodel.Dummies = donor.Dummies;
+            newmodel.Bones = donor.Bones;
 
-            foreach (var mesh in flver0Model.Meshes)
+            foreach (var mesh in newmodel.Meshes)
             {
                 mesh.MaterialIndex = 0;
                 mesh.Dynamic = 0;
@@ -262,8 +270,77 @@ namespace SFModelConverter
                     mesh.BoneIndices[i] = 0;
                 }     
             }
-            if (!File.Exists($"{flver0DonorModelPath}.bak")) File.Copy(flver0DonorModelPath, $"{flver0DonorModelPath}.bak");
-            flver0Model.Write(flver0DonorModelPath);
+            if (!File.Exists($"{donorPath}.bak")) File.Copy(donorPath, $"{donorPath}.bak");
+            newmodel.Write(donorPath);
+        }
+
+        public static FLVER0.Mesh GetMesh(FLVER2.Mesh mesh, FLVER2 model)
+        {
+            var material = model.Materials[mesh.MaterialIndex];
+            material.MTD = Path.GetFileName(material.MTD).ToLower();
+
+            FLVER0.Mesh meshd = new()
+            {
+                DefaultBoneIndex = (short)mesh.DefaultBoneIndex,
+                Dynamic = mesh.Dynamic,
+                MaterialIndex = (byte)mesh.MaterialIndex,
+                LayoutIndex = 0,
+                Vertices = mesh.Vertices,
+                VertexIndices = mesh.FaceSets[0].Indices,
+                CullBackfaces = mesh.FaceSets[0].CullBackfaces,
+                TriangleStrip = System.Convert.ToByte(mesh.FaceSets[0].TriangleStrip),
+                Unk46 = 0
+            };
+
+            for (int i = 0; i < 28; i++)
+            {
+                short index = -1;
+                if (i < mesh.BoneIndices.Count)
+                    index = (short)mesh.BoneIndices[i];
+                meshd.BoneIndices[i] = index;
+            }
+
+            return meshd;
+        }
+
+        public static FLVER0.Material GetMaterial(FLVER2.Material material)
+        {
+            var layout = GetLayout(material.MTD, out MTD mtd);
+            var mat = new FLVER0.Material()
+            {
+                MTD = material.MTD,
+                Name = material.Name,
+                Layouts = new List<FLVER0.BufferLayout>() { layout },
+                Textures = GetTextures(material.Textures, mtd)
+            };
+            return mat;
+        }
+
+        private static FLVER0.BufferLayout GetLayout(string path, out MTD mtd)
+        {
+            string mtdName = Path.GetFileNameWithoutExtension(path);
+            if (!Mtds.ContainsKey(mtdName))
+            {
+                if (mtdName.EndsWith("_skin"))
+                    mtdName = "default_skin";
+                else
+                    mtdName = "default";
+            }
+            mtd = Mtds[mtdName];
+            var layout = Layouts[Path.GetFileName(mtd.ShaderPath)][0];
+            return layout;
+        }
+
+        private static List<FLVER0.Texture> GetTextures(List<FLVER2.Texture> flver2TextureList, MTD mtd)
+        {
+            List<FLVER0.Texture> flver0TextureList = new();
+            foreach (var texture in mtd.Textures)
+            {
+                var flver2Texure = flver2TextureList.Find(x => x.Type == texture.Type);
+                if (flver2Texure != null)
+                    flver0TextureList.Add(new FLVER0.Texture() { Path = flver2Texure.Path, Type = flver2Texure.Type });
+            }
+            return flver0TextureList;
         }
     }
 }

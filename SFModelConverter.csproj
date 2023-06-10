@@ -68,29 +68,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Convert.cs" />
-    <Compile Include="Dumper.cs" />
-    <Compile Include="Extractor.cs" />
+    <Compile Include="CustomForms\SelectableColorTable.cs" />
+    <Compile Include="CustomForms\SelectableColorToolStripRenderer.cs" />
     <Compile Include="Export.cs" />
-    <Compile Include="SoulsFormatsFlip.cs" />
-    <Compile Include="SoulsFormatsSwap.cs" />
-    <Compile Include="Vector.cs" />
-    <Compile Include="AssimpFlip.cs" />
-    <Compile Include="FLVER2Convert.cs" />
+    <Compile Include="Utilities\FormUtil.cs" />
+    <Compile Include="Utilities\Logger.cs" />
+    <Compile Include="Utilities\PathUtil.cs" />
+    <Compile Include="ModelUtil.cs" />
     <Compile Include="Import.cs" />
     <Compile Include="IsExternalInit.cs" />
-    <Compile Include="Logger.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OverrideToolStripRenderer.cs" />
-    <Compile Include="OverrideMenuStripSelectedColor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AssimpSwap.cs" />
-    <Compile Include="Util.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
