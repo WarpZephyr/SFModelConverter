@@ -65,7 +65,7 @@ namespace SFModelConverter
         /// <param name="model">A FLVER0.</param>
         /// <param name="mesh">A mesh from the provided FLVER0.</param>
         /// <param name="newMesh">An assimp mesh.</param>
-        public static void AddVertices(FLVER0 model, FLVER0.Mesh mesh, Mesh newMesh, Dictionary<int, Bone> boneMap)
+        public static void AddVertices(FLVER0 model, FLVER0.Mesh mesh, Mesh newMesh)
         {
             for (int i = 0; i < mesh.Vertices.Count; i++)
             {
@@ -153,7 +153,7 @@ namespace SFModelConverter
                     var color = vertex.Colors[1];
                     newMesh.VertexColorChannels[1].Add(new(color.R, color.G, color.B, color.A));
                 }
-
+                /*
                 // Add bone weights
                 var boneIndex = vertex.NormalW;
                 if (boneIndex == -1)
@@ -178,6 +178,7 @@ namespace SFModelConverter
 
                 if (!boneMap[boneIndex].VertexWeights.Any(x => x.VertexID == i))
                     boneMap[boneIndex].VertexWeights.Add(new VertexWeight(i, boneWeight));
+                */
             }
         }
 
@@ -191,14 +192,15 @@ namespace SFModelConverter
             int meshCounter = 0;
             foreach (var mesh in model.Meshes)
             {
-                var boneMap = new Dictionary<int, Bone>();
+                //var boneMap = new Dictionary<int, Bone>();
                 var newMesh = new Mesh("Mesh_M" + meshCounter, PrimitiveType.Triangle);
 
                 // Add vertices
-                AddVertices(model, mesh, newMesh, boneMap);
+                //AddVertices(model, mesh, newMesh, boneMap);
+                AddVertices(model, mesh, newMesh);
 
                 //Add bones to mesh
-                newMesh.Bones.AddRange(boneMap.Values);
+                //newMesh.Bones.AddRange(boneMap.Values);
 
                 // Add faces
                 foreach (int[] indices in mesh.GetFaceVertexIndices(model.Header.Version))
@@ -242,7 +244,7 @@ namespace SFModelConverter
 
             // Export model to scene
             AddMaterials(model, scene);
-            AddBones(model, scene.RootNode);
+            //AddBones(model, scene.RootNode);
             AddMeshes(model, scene);
 
             // Export scene to save path
