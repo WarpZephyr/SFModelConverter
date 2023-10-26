@@ -299,8 +299,6 @@ namespace SFModelConverter
                         var bone = model.Bones[boneIndice];
                         var transform = bone.ComputeTransform(model.Bones);
 
-                        Console.WriteLine($"{vertex.Tangent.W}");
-
                         newMesh.Vertices.Add(vertex.Position.ToAssimpVector3D(transform));
                         newMesh.Normals.Add(vertex.Normal.ToAssimpVector3D());
                         newMesh.BiTangents.Add(vertex.Bitangent.ToAssimpVector3D());
