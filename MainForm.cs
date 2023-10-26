@@ -179,6 +179,6 @@ namespace SFModelConverter
                 StatusLabel.Text = $"Model exported successfully";
             else
                 StatusLabel.Text = $"Model failed export";
-        } 
+        }
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="CustomForms\SelectableColorTable.cs" />
     <Compile Include="CustomForms\SelectableColorToolStripRenderer.cs" />
     <Compile Include="Export.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Utilities\FormUtil.cs" />
     <Compile Include="Utilities\Logger.cs" />
     <Compile Include="Utilities\PathUtil.cs" />
@@ -128,9 +129,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SoulsFormats\SoulsFormats\SoulsFormats.csproj">
-      <Project>{e8216e1f-877a-4730-a285-1e405d966fa3}</Project>
-      <Name>SoulsFormats</Name>
+    <ProjectReference Include="..\SoulsFormatsExtended\SoulsFormats\SoulsFormatsExtended.csproj">
+      <Project>{fab0d263-fae2-4a27-8ded-f73951cc2671}</Project>
+      <Name>SoulsFormatsExtended</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
