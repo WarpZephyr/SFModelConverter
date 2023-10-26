@@ -76,34 +76,19 @@ namespace SFModelConverter
                 var newMesh = new Mesh("Mesh_M" + meshIndex, PrimitiveType.Triangle);
                 bool hasBones = mesh.BoneIndices.Length != 0;
 
-                // Add bones
-                if (hasBones)
-                {
-                    var aiBone = new Bone();
-                    var boneNode = boneArray[mesh.Vertices[0].NormalW];
-                    aiBone.Name = boneNode.Name;
-
-                    // VertexWeights
-                    for (int i = 0; i < newMesh.Vertices.Count; i++)
-                    {
-                        var aiVertexWeight = new VertexWeight(i, 1f);
-                        aiBone.VertexWeights.Add(aiVertexWeight);
-                    }
-
-                    aiBone.OffsetMatrix = Assimp.Matrix4x4.Identity;
-                    newMesh.Bones.Add(aiBone);
-                }
+                // Prepare a bone map
+                var boneMap = new Dictionary<int, Bone>(mesh.BoneIndices.Length);
 
                 // Add vertices
                 for (int vertexIndex = 0; vertexIndex < mesh.Vertices.Count; vertexIndex++)
                 {
                     var vertex = mesh.Vertices[vertexIndex];
-                    var bone = model.Bones[mesh.BoneIndices[vertex.NormalW]];
 
+                    // If the mesh has bones set the weights of this vertex to the correct bone
                     if (hasBones)
                     {
                         var transform = ModelUtil.ComputeTransformNonDynamic(model, mesh, vertex);
-                        
+
                         newMesh.Vertices.Add(vertex.Position.ToAssimpVector3D(transform));
                         newMesh.Normals.Add(vertex.Normal.ToAssimpVector3D(transform));
                         newMesh.BiTangents.Add(vertex.Bitangent.ToAssimpVector3D(transform));
@@ -111,6 +96,22 @@ namespace SFModelConverter
                         {
                             newMesh.Tangents.Add(tangent.ToAssimpVector3D(transform));
                         }
+
+                        // Get the local bone indice from NormalW then the bone array bone indice from the mesh
+                        var boneIndice = mesh.BoneIndices[vertex.NormalW];
+
+                        // If the bone map does not already have the bone add it
+                        if (!boneMap.ContainsKey(boneIndice))
+                        {
+                            var aiBone = new Bone();
+                            var boneNode = boneArray[boneIndice];
+                            aiBone.Name = boneNode.Name;
+                            aiBone.OffsetMatrix = Assimp.Matrix4x4.Identity;
+                            boneMap.Add(boneIndice, aiBone);
+                        }
+
+                        // Add this vertex weight to it's bone
+                        boneMap[boneIndice].VertexWeights.Add(new VertexWeight(vertexIndex, 1f));
                     }
                     else
                     {
@@ -189,6 +190,8 @@ namespace SFModelConverter
                         newMesh.VertexColorChannels[1].Add(new Color4D(color.R, color.G, color.B, color.A));
                     }
                 }
+
+                newMesh.Bones.AddRange(boneMap.Values);
 
                 // Add faces
                 var faceVertexIndices = mesh.GetFaceVertexIndices(model.Header.Version);
