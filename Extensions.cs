@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using SoulsFormats;
@@ -42,6 +43,12 @@ namespace SFModelConverter
             return new Assimp.Vector3D(vector.X, vector.Y, vector.Z);
         }
 
+        public static Assimp.Vector3D ToAssimpVector3DNormal(this Vector3 vector, Matrix4x4 transform)
+        {
+            vector = Vector3.TransformNormal(vector, transform);
+            return new Assimp.Vector3D(vector.X, vector.Y, vector.Z);
+        }
+
         public static Assimp.Vector3D ToAssimpVector3D(this Vector4 vector)
         {
             return new Assimp.Vector3D(vector.X, vector.Y, vector.Z);
@@ -51,6 +58,70 @@ namespace SFModelConverter
         {
             vector = Vector4.Transform(vector, transform);
             return new Assimp.Vector3D(vector.X, vector.Y, vector.Z);
+        }
+
+        public static Assimp.Vector3D ToAssimpVector3DNormal(this Vector4 vector, Matrix4x4 transform)
+        {
+            vector = Vector4.Transform(vector, transform);
+            return new Assimp.Vector3D(vector.X, vector.Y, vector.Z);
+        }
+
+        #endregion
+
+        #region Axis Vector
+
+        public static Assimp.Vector3D FlipXY(this Assimp.Vector3D vector)
+        {
+            float x = vector.X;
+            float y = vector.Y;
+            vector.X = y;
+            vector.Y = x;
+            return vector;
+        }
+
+        public static Assimp.Vector3D FlipXZ(this Assimp.Vector3D vector)
+        {
+            float x = vector.X;
+            float z = vector.Z;
+            vector.X = z;
+            vector.Z = x;
+            return vector;
+        }
+
+        public static Assimp.Vector3D FlipYZ(this Assimp.Vector3D vector)
+        {
+            float y = vector.Y;
+            float z = vector.Z;
+            vector.Y = z;
+            vector.Z = y;
+            return vector;
+        }
+
+        public static Vector3 FlipXY(this Vector3 vector)
+        {
+            float x = vector.X;
+            float y = vector.Y;
+            vector.X = y;
+            vector.Y = x;
+            return vector;
+        }
+
+        public static Vector3 FlipXZ(this Vector3 vector)
+        {
+            float x = vector.X;
+            float z = vector.Z;
+            vector.X = z;
+            vector.Z = x;
+            return vector;
+        }
+
+        public static Vector3 FlipYZ(this Vector3 vector)
+        {
+            float y = vector.Y;
+            float z = vector.Z;
+            vector.Y = z;
+            vector.Z = y;
+            return vector;
         }
 
         #endregion
@@ -108,6 +179,37 @@ namespace SFModelConverter
                 {
                     throw new InvalidDataException("Bone has a parent index outside of the provided bone array.");
                 }
+            }
+
+            return transform;
+        }
+
+        public static Matrix4x4 ComputeTransform(this MDL4.Bone bone, IList<MDL4.Bone> bones)
+        {
+            var transform = bone.ComputeLocalTransform();
+            while (bone.ParentIndex != -1)
+            {
+                if (!(bone.ParentIndex < -1) && !(bone.ParentIndex > bones.Count))
+                {
+                    bone = bones[bone.ParentIndex];
+                    transform *= bone.ComputeLocalTransform();
+                }
+                else
+                {
+                    throw new InvalidDataException("Bone has a parent index outside of the provided bone array.");
+                }
+            }
+
+            return transform;
+        }
+
+        public static Assimp.Matrix4x4 ComputeTransform(this Assimp.Node node)
+        {
+            var transform = node.Transform;
+            while (node.Parent != null)
+            {
+                transform *= node.Transform;
+                node = node.Parent;
             }
 
             return transform;

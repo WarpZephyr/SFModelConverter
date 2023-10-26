@@ -75,10 +75,10 @@
     <Compile Include="CustomForms\SelectableColorToolStripRenderer.cs" />
     <Compile Include="Export.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="MathUtil.cs" />
     <Compile Include="Utilities\FormUtil.cs" />
     <Compile Include="Utilities\Logger.cs" />
     <Compile Include="Utilities\PathUtil.cs" />
-    <Compile Include="ModelUtil.cs" />
     <Compile Include="Import.cs" />
     <Compile Include="IsExternalInit.cs" />
     <Compile Include="MainForm.cs">

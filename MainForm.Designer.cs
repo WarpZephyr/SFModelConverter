@@ -122,10 +122,9 @@
             this.MenuExportFBX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.MenuExportFBX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.MenuExportFBX.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.MenuExportFBX.Enabled = false;
             this.MenuExportFBX.ForeColor = System.Drawing.SystemColors.Control;
             this.MenuExportFBX.Name = "MenuExportFBX";
-            this.MenuExportFBX.Size = new System.Drawing.Size(139, 22);
+            this.MenuExportFBX.Size = new System.Drawing.Size(180, 22);
             this.MenuExportFBX.Text = "FBX";
             this.MenuExportFBX.ToolTipText = "Not working right now";
             this.MenuExportFBX.Click += new System.EventHandler(this.MenuExportFbx_Click);
@@ -135,10 +134,9 @@
             this.MenuExportAcsiiFbx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.MenuExportAcsiiFbx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.MenuExportAcsiiFbx.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.MenuExportAcsiiFbx.Enabled = false;
             this.MenuExportAcsiiFbx.ForeColor = System.Drawing.SystemColors.Control;
             this.MenuExportAcsiiFbx.Name = "MenuExportAcsiiFbx";
-            this.MenuExportAcsiiFbx.Size = new System.Drawing.Size(139, 22);
+            this.MenuExportAcsiiFbx.Size = new System.Drawing.Size(180, 22);
             this.MenuExportAcsiiFbx.Text = "Ascii FBX";
             this.MenuExportAcsiiFbx.ToolTipText = "Not working right now";
             this.MenuExportAcsiiFbx.Click += new System.EventHandler(this.MenuExportAcsiiFbx_Click);
@@ -150,7 +148,7 @@
             this.MenuExportColladaDae.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.MenuExportColladaDae.ForeColor = System.Drawing.SystemColors.Control;
             this.MenuExportColladaDae.Name = "MenuExportColladaDae";
-            this.MenuExportColladaDae.Size = new System.Drawing.Size(139, 22);
+            this.MenuExportColladaDae.Size = new System.Drawing.Size(180, 22);
             this.MenuExportColladaDae.Text = "Collada DAE";
             this.MenuExportColladaDae.ToolTipText = "Export imported model to Collada DAE";
             this.MenuExportColladaDae.Click += new System.EventHandler(this.MenuExportColladaDae_Click);
@@ -162,7 +160,7 @@
             this.MenuExportObj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.MenuExportObj.ForeColor = System.Drawing.SystemColors.Control;
             this.MenuExportObj.Name = "MenuExportObj";
-            this.MenuExportObj.Size = new System.Drawing.Size(139, 22);
+            this.MenuExportObj.Size = new System.Drawing.Size(180, 22);
             this.MenuExportObj.Text = "OBJ";
             this.MenuExportObj.ToolTipText = "Export imported model to OBJ - Will have issues for some reason, but works somewh" +
     "at";
