@@ -45,16 +45,6 @@ namespace SFModelConverter
             Logger.CreateLog();
         }
 
-        private void MenuReplace_Click(object sender, EventArgs e)
-        {
-            string flver2ModelPath = PathUtil.GetFilePath("FLVER2 Model to convert");
-            if (flver2ModelPath == null)
-                return;
-
-            Convert.ReplaceFlver0Flver2(flver2ModelPath);
-            StatusLabel.Text = "Conversion Successful";
-        }
-
         private void MenuCheckModel_Click(object sender, EventArgs e)
         {
             string path = PathUtil.GetFilePath("FLVER file");
@@ -103,6 +93,22 @@ namespace SFModelConverter
                 return;
 
             if (Smd4Export.ExportModel(path))
+                StatusLabel.Text = $"Model exported successfully";
+            else
+                StatusLabel.Text = $"Model failed export";
+        }
+
+        private void MenuExportFLVER0_Click(object sender, EventArgs e)
+        {
+            string path = PathUtil.GetFilePath("C:\\Users", "Choose a model to export",
+                "FLVER2 file (*.flv)|*.flv|FLVER2 file (*.flver)|*.flver|All files (*.*)|*.*");
+            if (path == null)
+                return;
+
+            var mtdPaths = new List<string>();
+            mtdPaths.AddRange(MtdPathsTextBox.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries));
+
+            if (Flver0Export.ExportModel(path, mtdPaths))
                 StatusLabel.Text = $"Model exported successfully";
             else
                 StatusLabel.Text = $"Model failed export";
@@ -196,6 +202,44 @@ namespace SFModelConverter
                 StatusLabel.Text = $"Model failed export";
         }
 
-        
+        private void MenuGetModelMtdPaths_Click(object sender, EventArgs e)
+        {
+            string path = PathUtil.GetFilePath("C:\\Users", "Choose a model to get the MTD paths of.");
+            if (path == null)
+                return;
+
+            if (FLVER0.Is(path))
+            {
+                var model = FLVER0.Read(path);
+                foreach (var material in model.Materials)
+                {
+                    if (MtdPathsTextBox.Text != string.Empty)
+                    {
+                        MtdPathsTextBox.Text += $"\r\n{material.MTD}";
+                    }
+                    else
+                    {
+                        MtdPathsTextBox.Text = $"{material.MTD}";
+                    }
+                }
+            }
+            else if (FLVER2.Is(path))
+            {
+                var model = FLVER2.Read(path);
+                foreach (var material in model.Materials)
+                {
+                    if (MtdPathsTextBox.Text != string.Empty)
+                    {
+                        MtdPathsTextBox.Text += $"\r\n{material.MTD}";
+                    }
+                    else
+                    {
+                        MtdPathsTextBox.Text = $"{material.MTD}";
+                    }
+                }
+            }
+            else
+                StatusLabel.Text = "No compatible model formats were found.";
+        }
     }
 }

@@ -70,10 +70,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Convert.cs" />
     <Compile Include="CustomForms\SelectableColorTable.cs" />
     <Compile Include="CustomForms\SelectableColorToolStripRenderer.cs" />
     <Compile Include="Export\AssimpExport.cs" />
+    <Compile Include="Export\Flver0Export.cs" />
     <Compile Include="Export\Smd4Export.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="MathUtil.cs" />

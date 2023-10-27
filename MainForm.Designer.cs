@@ -30,7 +30,6 @@
         {
             this.MainFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.FileMS = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuReplace = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuCheckModel = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuExport = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +43,10 @@
             this.MainFormStatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.MenuExportSMD4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuGetModelMtdPaths = new System.Windows.Forms.ToolStripMenuItem();
+            this.MtdsLabel = new System.Windows.Forms.Label();
+            this.MtdPathsTextBox = new System.Windows.Forms.TextBox();
+            this.MenuExportFLVER0 = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFormMenuStrip.SuspendLayout();
             this.MainFormStatusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +69,7 @@
             this.FileMS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FileMS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.FileMS.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuReplace,
+            this.MenuGetModelMtdPaths,
             this.MenuCheckModel,
             this.toolStripSeparator1,
             this.MenuExport,
@@ -76,31 +79,19 @@
             this.FileMS.Size = new System.Drawing.Size(37, 20);
             this.FileMS.Text = "File";
             // 
-            // MenuReplace
-            // 
-            this.MenuReplace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.MenuReplace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.MenuReplace.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.MenuReplace.ForeColor = System.Drawing.SystemColors.Control;
-            this.MenuReplace.Name = "MenuReplace";
-            this.MenuReplace.Size = new System.Drawing.Size(180, 22);
-            this.MenuReplace.Text = "Replace";
-            this.MenuReplace.ToolTipText = "Replaces ACFA FLVER0 model with FLVER2 model";
-            this.MenuReplace.Click += new System.EventHandler(this.MenuReplace_Click);
-            // 
             // MenuCheckModel
             // 
             this.MenuCheckModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.MenuCheckModel.ForeColor = System.Drawing.SystemColors.Control;
             this.MenuCheckModel.Name = "MenuCheckModel";
-            this.MenuCheckModel.Size = new System.Drawing.Size(180, 22);
+            this.MenuCheckModel.Size = new System.Drawing.Size(189, 22);
             this.MenuCheckModel.Text = "Check Model Type";
             this.MenuCheckModel.Click += new System.EventHandler(this.MenuCheckModel_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(186, 6);
             // 
             // MenuExport
             // 
@@ -112,10 +103,11 @@
             this.MenuExportAcsiiFbx,
             this.MenuExportColladaDae,
             this.MenuExportObj,
-            this.MenuExportSMD4});
+            this.MenuExportSMD4,
+            this.MenuExportFLVER0});
             this.MenuExport.ForeColor = System.Drawing.SystemColors.Control;
             this.MenuExport.Name = "MenuExport";
-            this.MenuExport.Size = new System.Drawing.Size(180, 22);
+            this.MenuExport.Size = new System.Drawing.Size(189, 22);
             this.MenuExport.Text = "Export";
             this.MenuExport.ToolTipText = "Export model files";
             // 
@@ -177,7 +169,7 @@
             this.MenuDumpLayout});
             this.MenuDump.ForeColor = System.Drawing.SystemColors.Control;
             this.MenuDump.Name = "MenuDump";
-            this.MenuDump.Size = new System.Drawing.Size(180, 22);
+            this.MenuDump.Size = new System.Drawing.Size(189, 22);
             this.MenuDump.Text = "Dump";
             this.MenuDump.ToolTipText = "Dump model MTDs and Buffer Layouts";
             // 
@@ -210,7 +202,7 @@
             this.MainFormStatusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.MainFormStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel});
-            this.MainFormStatusStrip.Location = new System.Drawing.Point(0, 22);
+            this.MainFormStatusStrip.Location = new System.Drawing.Point(0, 307);
             this.MainFormStatusStrip.Name = "MainFormStatusStrip";
             this.MainFormStatusStrip.Size = new System.Drawing.Size(759, 22);
             this.MainFormStatusStrip.TabIndex = 2;
@@ -230,13 +222,54 @@
             this.MenuExportSMD4.ToolTipText = "Export to FromSoftware SMD4";
             this.MenuExportSMD4.Click += new System.EventHandler(this.MenuExportSMD4_Click);
             // 
+            // MenuGetModelMtdPaths
+            // 
+            this.MenuGetModelMtdPaths.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.MenuGetModelMtdPaths.ForeColor = System.Drawing.SystemColors.Control;
+            this.MenuGetModelMtdPaths.Name = "MenuGetModelMtdPaths";
+            this.MenuGetModelMtdPaths.Size = new System.Drawing.Size(189, 22);
+            this.MenuGetModelMtdPaths.Text = "Get Model MTD Paths";
+            this.MenuGetModelMtdPaths.ToolTipText = "Gets MTD paths from FLVERs";
+            this.MenuGetModelMtdPaths.Click += new System.EventHandler(this.MenuGetModelMtdPaths_Click);
+            // 
+            // MtdsLabel
+            // 
+            this.MtdsLabel.AutoSize = true;
+            this.MtdsLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MtdsLabel.Location = new System.Drawing.Point(0, 24);
+            this.MtdsLabel.Name = "MtdsLabel";
+            this.MtdsLabel.Size = new System.Drawing.Size(64, 13);
+            this.MtdsLabel.TabIndex = 4;
+            this.MtdsLabel.Text = "MTD Paths:";
+            // 
+            // MtdPathsTextBox
+            // 
+            this.MtdPathsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MtdPathsTextBox.Location = new System.Drawing.Point(0, 37);
+            this.MtdPathsTextBox.Multiline = true;
+            this.MtdPathsTextBox.Name = "MtdPathsTextBox";
+            this.MtdPathsTextBox.Size = new System.Drawing.Size(759, 270);
+            this.MtdPathsTextBox.TabIndex = 5;
+            // 
+            // MenuExportFLVER0
+            // 
+            this.MenuExportFLVER0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.MenuExportFLVER0.ForeColor = System.Drawing.SystemColors.Control;
+            this.MenuExportFLVER0.Name = "MenuExportFLVER0";
+            this.MenuExportFLVER0.Size = new System.Drawing.Size(180, 22);
+            this.MenuExportFLVER0.Text = "FLVER0";
+            this.MenuExportFLVER0.ToolTipText = "Export to FromSoftware FLVER0";
+            this.MenuExportFLVER0.Click += new System.EventHandler(this.MenuExportFLVER0_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(759, 44);
+            this.ClientSize = new System.Drawing.Size(759, 329);
+            this.Controls.Add(this.MtdPathsTextBox);
+            this.Controls.Add(this.MtdsLabel);
             this.Controls.Add(this.MainFormStatusStrip);
             this.Controls.Add(this.MainFormMenuStrip);
             this.ForeColor = System.Drawing.SystemColors.Control;
@@ -262,7 +295,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem MenuDumpMtd;
         private System.Windows.Forms.ToolStripMenuItem MenuDumpLayout;
-        private System.Windows.Forms.ToolStripMenuItem MenuReplace;
         private System.Windows.Forms.ToolStripMenuItem MenuExport;
         private System.Windows.Forms.ToolStripMenuItem MenuCheckModel;
         private System.Windows.Forms.ToolStripMenuItem MenuExportColladaDae;
@@ -270,6 +302,10 @@
         private System.Windows.Forms.ToolStripMenuItem MenuExportObj;
         private System.Windows.Forms.ToolStripMenuItem MenuExportAcsiiFbx;
         private System.Windows.Forms.ToolStripMenuItem MenuExportSMD4;
+        private System.Windows.Forms.ToolStripMenuItem MenuGetModelMtdPaths;
+        private System.Windows.Forms.Label MtdsLabel;
+        private System.Windows.Forms.TextBox MtdPathsTextBox;
+        private System.Windows.Forms.ToolStripMenuItem MenuExportFLVER0;
     }
 }
 
