@@ -43,6 +43,7 @@
             this.MenuDumpLayout = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFormStatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.MenuExportSMD4 = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFormMenuStrip.SuspendLayout();
             this.MainFormStatusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -110,7 +111,8 @@
             this.MenuExportFBX,
             this.MenuExportAcsiiFbx,
             this.MenuExportColladaDae,
-            this.MenuExportObj});
+            this.MenuExportObj,
+            this.MenuExportSMD4});
             this.MenuExport.ForeColor = System.Drawing.SystemColors.Control;
             this.MenuExport.Name = "MenuExport";
             this.MenuExport.Size = new System.Drawing.Size(180, 22);
@@ -218,6 +220,16 @@
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
+            // MenuExportSMD4
+            // 
+            this.MenuExportSMD4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.MenuExportSMD4.ForeColor = System.Drawing.SystemColors.Control;
+            this.MenuExportSMD4.Name = "MenuExportSMD4";
+            this.MenuExportSMD4.Size = new System.Drawing.Size(180, 22);
+            this.MenuExportSMD4.Text = "SMD4";
+            this.MenuExportSMD4.ToolTipText = "Export to FromSoftware SMD4";
+            this.MenuExportSMD4.Click += new System.EventHandler(this.MenuExportSMD4_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -257,6 +269,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuExportFBX;
         private System.Windows.Forms.ToolStripMenuItem MenuExportObj;
         private System.Windows.Forms.ToolStripMenuItem MenuExportAcsiiFbx;
+        private System.Windows.Forms.ToolStripMenuItem MenuExportSMD4;
     }
 }
 

@@ -11,49 +11,54 @@ namespace SFModelConverter
     /// <summary>
     /// Class for exporting SoulsFormats models using Assimp.
     /// </summary>
-    internal static class Export
+    internal static class AssimpExport
     {
         /// <summary>
-        /// Exports a FLVER0 model to the chosen model type using assimp.
+        /// Exports a supported model type to the chosen model type using assimp.
         /// </summary>
-        /// <param name="path">The path to a FLVER0 model.</param>
+        /// <param name="path">The path to a supported model.</param>
         /// <param name="type">The type to export.</param>
         /// <returns>Whether or not the export was successful.</returns>
         public static bool ExportModel(string path, string type)
         {
             string outPath = $"{Path.GetDirectoryName(path)}\\{Path.GetFileNameWithoutExtension(path)}.{GetExtension(type)}";
+            string backupPath = $"{outPath}.bak";
 
             // Read model and make scene
             Scene scene;
             if (FLVER0.Is(path))
             {
-                var model = FLVER0.Read(path);
-                scene = ToAssimpScene(model);
+                scene = ToAssimpScene(FLVER0.Read(path));
             }
             else if (FLVER2.Is(path))
             {
-                var model = FLVER2.Read(path);
-                scene = ToAssimpScene(model);
+                scene = ToAssimpScene(FLVER2.Read(path));
             }
             else if (MDL4.Is(path))
             {
-                var model = MDL4.Read(path);
-                scene = ToAssimpScene(model);
+                scene = ToAssimpScene(MDL4.Read(path));
             }
             else if (SMD4.Is(path))
             {
-                var model = SMD4.Read(path);
-                scene = ToAssimpScene(model);
+                scene = ToAssimpScene(SMD4.Read(path));
             }
             else
             {
                 return false;
             }
 
+            // Backup file
+            if (File.Exists(outPath))
+                if (!File.Exists(backupPath))
+                    File.Move(outPath, backupPath);
+
             // Export scene to save path
             return new AssimpContext().ExportFile(scene, outPath, type);
         }
 
+        /// <summary>
+        /// Converts a FLVER0 into an Assimp Scene.
+        /// </summary>
         public static Scene ToAssimpScene(FLVER0 model)
         {
             var scene = new Scene();
@@ -242,6 +247,9 @@ namespace SFModelConverter
             return scene;
         }
 
+        /// <summary>
+        /// Converts a FLVER2 into an Assimp Scene.
+        /// </summary>
         public static Scene ToAssimpScene(FLVER2 model)
         {
             var scene = new Scene();
@@ -433,6 +441,9 @@ namespace SFModelConverter
             return scene;
         }
 
+        /// <summary>
+        /// Converts an MDL4 into an Assimp Scene.
+        /// </summary>
         public static Scene ToAssimpScene(MDL4 model)
         {
             var scene = new Scene();
@@ -607,6 +618,9 @@ namespace SFModelConverter
             return scene;
         }
 
+        /// <summary>
+        /// Converts an SMD4 into an Assimp Scene.
+        /// </summary>
         public static Scene ToAssimpScene(SMD4 model)
         {
             var scene = new Scene();

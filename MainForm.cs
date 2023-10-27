@@ -77,22 +77,35 @@ namespace SFModelConverter
 
         private void MenuExportFbx_Click(object sender, EventArgs e)
         {
-            ExportModel("fbx");
+            AssimpExportModel("fbx");
         }
 
         private void MenuExportAcsiiFbx_Click(object sender, EventArgs e)
         {
-            ExportModel("fbxa");
+            AssimpExportModel("fbxa");
         }
 
         private void MenuExportColladaDae_Click(object sender, EventArgs e)
         {
-            ExportModel("collada");
+            AssimpExportModel("collada");
         }
 
         private void MenuExportObj_Click(object sender, EventArgs e)
         {
-            ExportModel("obj");
+            AssimpExportModel("obj");
+        }
+
+        private void MenuExportSMD4_Click(object sender, EventArgs e)
+        {
+            string path = PathUtil.GetFilePath("C:\\Users", "Choose a model to export",
+                "FLVER file (*.flv)|*.flv|FLVER file (*.flver)|*.flver|MDL4 file (*.mdl)|*.mdl|All files (*.*)|*.*");
+            if (path == null)
+                return;
+
+            if (Smd4Export.ExportModel(path))
+                StatusLabel.Text = $"Model exported successfully";
+            else
+                StatusLabel.Text = $"Model failed export";
         }
 
         private void MenuDumpMtd_Click(object sender, EventArgs e)
@@ -119,7 +132,6 @@ namespace SFModelConverter
             }
 
             File.WriteAllText(outPath, json);
-
             StatusLabel.Text = $"Finished dumping mtds successfully.";
         }
 
@@ -171,17 +183,19 @@ namespace SFModelConverter
             StatusLabel.Text = $"Finished dumping buffer layouts successfully.";
         }
 
-        private void ExportModel(string type)
+        private void AssimpExportModel(string type)
         {
             string path = PathUtil.GetFilePath("C:\\Users", "Choose a model to export",
                 "FLVER file (*.flv)|*.flv|FLVER file (*.flver)|*.flver|MDL4 file (*.mdl)|*.mdl|SMD4 file (*.smd)|*.smd|All files (*.*)|*.*");
             if (path == null)
                 return;
 
-            if (Export.ExportModel(path, type))
+            if (AssimpExport.ExportModel(path, type))
                 StatusLabel.Text = $"Model exported successfully";
             else
                 StatusLabel.Text = $"Model failed export";
         }
+
+        
     }
 }
