@@ -203,6 +203,25 @@ namespace SFModelConverter
             return transform;
         }
 
+        public static Matrix4x4 ComputeTransform(this SMD4.Bone bone, IList<SMD4.Bone> bones)
+        {
+            var transform = bone.ComputeLocalTransform();
+            while (bone.ParentIndex != -1)
+            {
+                if (!(bone.ParentIndex < -1) && !(bone.ParentIndex > bones.Count))
+                {
+                    bone = bones[bone.ParentIndex];
+                    transform *= bone.ComputeLocalTransform();
+                }
+                else
+                {
+                    throw new InvalidDataException("Bone has a parent index outside of the provided bone array.");
+                }
+            }
+
+            return transform;
+        }
+
         public static Assimp.Matrix4x4 ComputeTransform(this Assimp.Node node)
         {
             var transform = node.Transform;

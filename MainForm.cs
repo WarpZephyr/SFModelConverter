@@ -69,6 +69,8 @@ namespace SFModelConverter
                 StatusLabel.Text = "MDL4 was detected";
             else if (MDL.Is(path))
                 StatusLabel.Text = "MDL was detected";
+            else if (SMD4.Is(path))
+                StatusLabel.Text = "SMD4 was detected";
             else
                 StatusLabel.Text = "Nothing was detected";
         }
@@ -171,7 +173,8 @@ namespace SFModelConverter
 
         private void ExportModel(string type)
         {
-            string path = PathUtil.GetFilePath("C:\\Users", "Choose a model to export", "FLVER0 file (*.flv)|*.flv|FLVER0 file (*.flver)|*.flver|MDL4 file (*.mdl)|*.mdl|All files (*.*)|*.*");
+            string path = PathUtil.GetFilePath("C:\\Users", "Choose a model to export",
+                "FLVER file (*.flv)|*.flv|FLVER file (*.flver)|*.flver|MDL4 file (*.mdl)|*.mdl|SMD4 file (*.smd)|*.smd|All files (*.*)|*.*");
             if (path == null)
                 return;
 

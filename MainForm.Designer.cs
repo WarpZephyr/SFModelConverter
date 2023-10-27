@@ -126,7 +126,7 @@
             this.MenuExportFBX.Name = "MenuExportFBX";
             this.MenuExportFBX.Size = new System.Drawing.Size(180, 22);
             this.MenuExportFBX.Text = "FBX";
-            this.MenuExportFBX.ToolTipText = "Not working right now";
+            this.MenuExportFBX.ToolTipText = "Export to FBX";
             this.MenuExportFBX.Click += new System.EventHandler(this.MenuExportFbx_Click);
             // 
             // MenuExportAcsiiFbx
@@ -138,7 +138,7 @@
             this.MenuExportAcsiiFbx.Name = "MenuExportAcsiiFbx";
             this.MenuExportAcsiiFbx.Size = new System.Drawing.Size(180, 22);
             this.MenuExportAcsiiFbx.Text = "Ascii FBX";
-            this.MenuExportAcsiiFbx.ToolTipText = "Not working right now";
+            this.MenuExportAcsiiFbx.ToolTipText = "Export to Ascii FBX";
             this.MenuExportAcsiiFbx.Click += new System.EventHandler(this.MenuExportAcsiiFbx_Click);
             // 
             // MenuExportColladaDae
@@ -150,7 +150,7 @@
             this.MenuExportColladaDae.Name = "MenuExportColladaDae";
             this.MenuExportColladaDae.Size = new System.Drawing.Size(180, 22);
             this.MenuExportColladaDae.Text = "Collada DAE";
-            this.MenuExportColladaDae.ToolTipText = "Export imported model to Collada DAE";
+            this.MenuExportColladaDae.ToolTipText = "Export to Collada DAE";
             this.MenuExportColladaDae.Click += new System.EventHandler(this.MenuExportColladaDae_Click);
             // 
             // MenuExportObj
@@ -162,8 +162,7 @@
             this.MenuExportObj.Name = "MenuExportObj";
             this.MenuExportObj.Size = new System.Drawing.Size(180, 22);
             this.MenuExportObj.Text = "OBJ";
-            this.MenuExportObj.ToolTipText = "Export imported model to OBJ - Will have issues for some reason, but works somewh" +
-    "at";
+            this.MenuExportObj.ToolTipText = "Export to OBJ";
             this.MenuExportObj.Click += new System.EventHandler(this.MenuExportObj_Click);
             // 
             // MenuDump
